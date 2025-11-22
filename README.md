@@ -1,36 +1,193 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 CraftingAI - Modern AI Landing Page
 
-## Getting Started
+Modern, responsive ve performans odaklı bir yapay zeka platformu landing sayfası. Next.js 16, React 19 ve Tailwind CSS 4 ile geliştirilmiştir.
 
-First, run the development server:
+![Next.js](https://img.shields.io/badge/Next.js-16.0.3-black?style=for-the-badge&logo=next.js)
+![React](https://img.shields.io/badge/React-19.2.0-61DAFB?style=for-the-badge&logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.0-38B2AC?style=for-the-badge&logo=tailwind-css)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ✨ Özellikler
+
+### 🎨 Modern Tasarım
+- **Gradient Animasyonlar**: Dinamik ve göz alıcı gradient efektler
+- **Glassmorphism**: Modern cam efekti tasarım
+- **Dark Theme**: Profesyonel koyu tema
+- **Responsive**: Tüm cihazlarda mükemmel görünüm
+
+### ⚡ Performans
+- **Server Components**: Next.js 16 Server Components ile optimize edilmiş render
+- **Minimal Bundle**: Gereksiz client-side JavaScript'i minimize edildi
+- **SEO-Friendly**: Server-side rendering ile mükemmel SEO
+- **Fast Load**: Optimize edilmiş asset'ler ve lazy loading
+
+### 🧭 Navigasyon
+- **Scroll Spy**: Otomatik section algılama ve aktif link gösterimi
+- **Smooth Scrolling**: Yumuşak sayfa içi navigasyon
+- **Mobile Menu**: Responsive mobil menü
+- **Fixed Header**: Sabit header ile kolay erişim
+
+### 🛠️ State Management
+- **Redux Toolkit**: Modern state yönetimi
+- **React Redux**: React entegrasyonu
+- **Client Components**: Gerektiğinde client-side interaktivite
+
+## 🏗️ Proje Yapısı
+
+```
+craftingai_nextjs_p2/
+├── app/
+│   ├── components/
+│   │   └── Landing_Layout/
+│   │       ├── Header/          # Navigation header
+│   │       └── Footer/          # Footer component
+│   ├── landing/
+│   │   ├── layout.tsx           # Landing layout
+│   │   └── page.tsx             # Landing page (Server Component)
+│   ├── store/
+│   │   └── store.ts             # Redux store configuration
+│   ├── globals.css              # Global styles & animations
+│   └── layout.tsx               # Root layout
+├── public/                       # Static assets
+└── package.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Kurulum
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Gereksinimler
+- Node.js 20.x veya üzeri
+- npm, yarn, pnpm veya bun
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Adımlar
 
-## Learn More
+1. **Repository'yi klonlayın**
+```bash
+git clone <repository-url>
+cd craftingai_nextjs_p2
+```
 
-To learn more about Next.js, take a look at the following resources:
+2. **Bağımlılıkları yükleyin**
+```bash
+npm install
+# veya
+yarn install
+# veya
+pnpm install
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Development sunucusunu başlatın**
+```bash
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. **Tarayıcınızda açın**
+```
+http://localhost:3000/landing
+```
 
-## Deploy on Vercel
+## 📦 Teknolojiler
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Core
+- **Next.js 16.0.3** - React framework (App Router)
+- **React 19.2.0** - UI library
+- **TypeScript 5** - Type safety
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Styling
+- **Tailwind CSS 4** - Utility-first CSS framework
+- **PostCSS** - CSS transformations
+- **Custom Animations** - CSS keyframe animations
+
+### State Management
+- **Redux Toolkit 2.10.1** - State management
+- **React Redux 9.2.0** - React bindings
+
+### Development
+- **ESLint 9** - Code linting
+- **TypeScript** - Static type checking
+
+## 🎯 Sayfalar
+
+### Landing Page (`/landing`)
+- ✨ Hero section with animated gradients
+- 🎯 Features section with 4 key features
+- 📊 Statistics showcase
+- 💻 Code mockup demonstration
+- 📱 Fully responsive design
+
+### Components
+- **Header**: Fixed navigation with scroll spy
+- **Footer**: Multi-column footer with social links
+
+## 🔧 Geliştirme
+
+### Scripts
+
+```bash
+# Development sunucusu
+npm run dev
+
+# Production build
+npm run build
+
+# Production sunucusu başlat
+npm run start
+
+# Linting
+npm run lint
+```
+
+### Özelleştirme
+
+**Renkler**: `globals.css` ve Tailwind utility class'ları kullanarak özelleştirin
+
+**Animasyonlar**: `globals.css` içinde keyframe tanımları
+
+**Components**: `app/components/` altında component'leri düzenleyin
+
+## 🎨 Tasarım Sistemi
+
+### Renk Paleti
+- **Primary**: Indigo (500-950)
+- **Secondary**: Purple (400-500)
+- **Accent**: Pink (400-500)
+- **Background**: Slate (800-950)
+
+### Animasyonlar
+- `animate-pulse` - Pulsing effect
+- `animate-gradient` - Gradient position animation
+- Hover transitions - Scale, translate, opacity
+
+## 📱 Responsive Breakpoints
+
+- **Mobile**: < 768px
+- **Tablet**: 768px - 1024px
+- **Desktop**: > 1024px
+
+## 🚀 Deployment
+
+### Vercel (Önerilen)
+```bash
+# Vercel CLI ile deploy
+vercel
+```
+
+### Build & Export
+```bash
+npm run build
+npm run start
+```
+
+## 📄 Lisans
+
+Bu proje özel/ticari bir proje olarak geliştirilmiştir.
+
+## 👨‍💻 Geliştirici
+
+**CraftingAI Team**
+
+---
+
+<div align="center">
+  <p>⭐ Bu projeyi beğendiyseniz yıldız vermeyi unutmayın!</p>
+  <p>Made with ❤️ using Next.js & Tailwind CSS</p>
+</div>
