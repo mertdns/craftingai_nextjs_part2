@@ -1,12 +1,16 @@
 "use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useRef, useState, useEffect } from "react";
 
 export default function Header() {
     const [menuState, SetMenuState] = useState<boolean>(false);
-    const [activeLink, setActiveLink] = useState<string>("Ana sayfa");
+    const [activeLink, setActiveLink] = useState<string>("");
 
     const mobileMenu = useRef<HTMLElement>(null);
+
+    const pathname = usePathname();
 
     const toggle = () => {
         mobileMenu.current?.classList.toggle("hidden");
@@ -14,7 +18,8 @@ export default function Header() {
     }
 
     const handleLinkClick = (linkName: string) => {
-        setActiveLink(linkName);
+        if(pathname == "/landing") setActiveLink(linkName);
+
         // Mobil menü açıksa kapat
         if (menuState) {
             toggle();
@@ -23,6 +28,8 @@ export default function Header() {
 
     // Scroll Spy - Sadece kullanıcı scroll yaptığında çalışır
     useEffect(() => {
+        if(pathname == "/landing") setActiveLink("Ana sayfa");
+
         let isScrolling = false;
         let scrollTimeout: NodeJS.Timeout;
 
@@ -88,16 +95,16 @@ export default function Header() {
     const normalLinkStyleMobile = "text-slate-200 text-lg font-medium hover:bg-indigo-900/40 hover:text-white transition-all duration-300 px-4 py-2 block rounded-lg mx-4";
 
     return (
-        <header id="header" className="bg-gradient-to-r fixed w-full z-20 from-slate-900 via-indigo-950 to-slate-900 border-b border-indigo-900/30 backdrop-blur-sm">
+        <header id="header" className="bg-gradient-to-r fixed w-full py-2 z-20 from-slate-900 via-indigo-950 to-slate-900 border-b border-indigo-900/30 backdrop-blur-sm">
             <div className="max-w-7xl mx-auto flex justify-between items-center px-3">
                 <h1><Link className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400 px-1 py-2 block text-xl tracking-wider" href="#">CraftingAI</Link></h1>
                 <nav>
                     <ul className="hidden lg:flex lg:items-center lg:gap-x-5">
-                        <li><Link onClick={() => handleLinkClick("Ana sayfa")} className={activeLink === "Ana sayfa" ? activeLinkStyle : normalLinkStyle} href="#header">Ana sayfa</Link></li>
-                        <li><Link onClick={() => handleLinkClick("Özellikler")} className={activeLink === "Özellikler" ? activeLinkStyle : normalLinkStyle} href="#features">Özellikler</Link></li>
-                        <li><Link onClick={() => handleLinkClick("Fiyatlandırma")} className={activeLink === "Fiyatlandırma" ? activeLinkStyle : normalLinkStyle} href="#pricing">Fiyatlandırma</Link></li>
-                        <li><Link onClick={() => handleLinkClick("Hakkımızda")} className={activeLink === "Hakkımızda" ? activeLinkStyle : normalLinkStyle} href="#about">Hakkımızda</Link></li>
-                        <li><Link onClick={() => handleLinkClick("İletişim")} className={activeLink === "İletişim" ? activeLinkStyle : normalLinkStyle} href="#contact">İletişim</Link></li>
+                        <li><Link onClick={() => handleLinkClick("Ana sayfa")} className={activeLink === "Ana sayfa" ? activeLinkStyle : normalLinkStyle} href={pathname == "/landing" ? "#header" : "/landing#header"}>Ana sayfa</Link></li>
+                        <li><Link onClick={() => handleLinkClick("Özellikler")} className={activeLink === "Özellikler" ? activeLinkStyle : normalLinkStyle} href={pathname == "/landing" ? "#features" : "/landing#features"}>Özellikler</Link></li>
+                        <li><Link onClick={() => handleLinkClick("Fiyatlandırma")} className={activeLink === "Fiyatlandırma" ? activeLinkStyle : normalLinkStyle} href={pathname == "/landing" ? "#pricing" : "/landing#pricing"}>Fiyatlandırma</Link></li>
+                        <li><Link onClick={() => handleLinkClick("Hakkımızda")} className={activeLink === "Hakkımızda" ? activeLinkStyle : normalLinkStyle} href={pathname == "/landing" ? "#about" : "/landing#about"}>Hakkımızda</Link></li>
+                        <li><Link onClick={() => handleLinkClick("İletişim")} className={activeLink === "İletişim" ? activeLinkStyle : normalLinkStyle} href={pathname == "/landing" ? "#contact" : "/landing#contact"}>İletişim</Link></li>
                     </ul>
                 </nav>
                 <div id="actions" className="hidden lg:flex lg:items-center lg:gap-x-3">
@@ -111,11 +118,11 @@ export default function Header() {
 
             <nav id="mobileMenu" className="hidden lg:hidden bg-slate-900/95 backdrop-blur-sm" ref={mobileMenu}>
                 <ul className="text-center space-y-2 py-4">
-                    <li><Link onClick={() => handleLinkClick("Ana sayfa")} className={activeLink === "Ana sayfa" ? activeLinkStyleMobile : normalLinkStyleMobile} href="#header">Ana sayfa</Link></li>
-                    <li><Link onClick={() => handleLinkClick("Özellikler")} className={activeLink === "Özellikler" ? activeLinkStyleMobile : normalLinkStyleMobile} href="#features">Özellikler</Link></li>
-                    <li><Link onClick={() => handleLinkClick("Fiyatlandırma")} className={activeLink === "Fiyatlandırma" ? activeLinkStyleMobile : normalLinkStyleMobile} href="#pricing">Fiyatlandırma</Link></li>
-                    <li><Link onClick={() => handleLinkClick("Hakkımızda")} className={activeLink === "Hakkımızda" ? activeLinkStyleMobile : normalLinkStyleMobile} href="#about">Hakkımızda</Link></li>
-                    <li><Link onClick={() => handleLinkClick("İletişim")} className={activeLink === "İletişim" ? activeLinkStyleMobile : normalLinkStyleMobile} href="#contact">İletişim</Link></li>
+                    <li><Link onClick={() => handleLinkClick("Ana sayfa")} className={activeLink === "Ana sayfa" ? activeLinkStyleMobile : normalLinkStyleMobile} href={pathname == "/landing" ? "#header" : "/landing#header"}>Ana sayfa</Link></li>
+                    <li><Link onClick={() => handleLinkClick("Özellikler")} className={activeLink === "Özellikler" ? activeLinkStyleMobile : normalLinkStyleMobile} href={pathname == "/landing" ? "#features" : "/landing#features"}>Özellikler</Link></li>
+                    <li><Link onClick={() => handleLinkClick("Fiyatlandırma")} className={activeLink === "Fiyatlandırma" ? activeLinkStyleMobile : normalLinkStyleMobile} href={pathname == "/landing" ? "#pricing" : "/landing#pricing"}>Fiyatlandırma</Link></li>
+                    <li><Link onClick={() => handleLinkClick("Hakkımızda")} className={activeLink === "Hakkımızda" ? activeLinkStyleMobile : normalLinkStyleMobile} href={pathname == "/landing" ? "#about" : "/landing#about"}>Hakkımızda</Link></li>
+                    <li><Link onClick={() => handleLinkClick("İletişim")} className={activeLink === "İletişim" ? activeLinkStyleMobile : normalLinkStyleMobile} href={pathname == "/landing" ? "#contact" : "/landing#contact"}>İletişim</Link></li>
                 </ul>
                 <div className="flex flex-col gap-3 px-4 pb-4 pt-2">
                     <button className="bg-indigo-600/20 border border-indigo-500/50 text-indigo-200 hover:bg-indigo-600/40 hover:border-indigo-400 rounded-xl px-5 py-2 font-medium transition-all duration-300 w-full" type="button"><Link href="/register">Kayıt Ol</Link></button>

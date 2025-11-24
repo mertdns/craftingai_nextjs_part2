@@ -87,20 +87,20 @@ export default function Landing() {
                     </div>
                 </div>
 
-                {/* Hero Görseli/Mockup */}
-                <div className="mt-20 relative">
+                {/* Hero Görseli/Mockup - Responsive İyileştirmeleri */}
+                <div className="mt-12 md:mt-20 px-2 sm:px-0">
                     <div className="relative mx-auto max-w-5xl">
-                        <div className="bg-gradient-to-r from-indigo-500/10 to-purple-500/10 backdrop-blur-sm border border-indigo-500/20 rounded-2xl p-8 shadow-2xl shadow-indigo-500/10">
-                            <div className="bg-slate-900/50 rounded-lg p-8 border border-indigo-900/30">
-                                <div className="space-y-3 font-mono text-sm">
-                                    <div className="flex items-center gap-2">
+                        <div className="bg-gradient-to-r from-indigo-500/10 to-purple-500/10 backdrop-blur-sm border border-indigo-500/20 rounded-xl md:rounded-2xl p-3 sm:p-4 md:p-6 lg:p-8 shadow-2xl shadow-indigo-500/10">
+                            <div className="bg-slate-900/50 rounded-lg p-3 sm:p-4 md:p-6 lg:p-8 border border-indigo-900/30">
+                                <div className="space-y-2 md:space-y-3 font-mono text-[0.625rem] sm:text-xs md:text-sm">
+                                    <div className="flex items-center gap-1 flex-wrap">
                                         <span className="text-purple-400">import</span>
                                         <span className="text-slate-300">{'{ CraftingAI }'}</span>
                                         <span className="text-purple-400">from</span>
                                         <span className="text-green-400">'craftingai'</span>
                                     </div>
-                                    <div className="h-4"></div>
-                                    <div className="flex items-center gap-2">
+                                    <div className="h-2 md:h-4"></div>
+                                    <div className="flex items-center gap-1 flex-wrap">
                                         <span className="text-blue-400">const</span>
                                         <span className="text-slate-300">ai</span>
                                         <span className="text-purple-400">=</span>
@@ -108,7 +108,7 @@ export default function Landing() {
                                         <span className="text-yellow-400">CraftingAI</span>
                                         <span className="text-slate-300">()</span>
                                     </div>
-                                    <div className="flex items-center gap-2">
+                                    <div className="flex items-center gap-1 flex-wrap">
                                         <span className="text-blue-400">const</span>
                                         <span className="text-slate-300">result</span>
                                         <span className="text-purple-400">=</span>
@@ -119,15 +119,15 @@ export default function Landing() {
                                         <span className="text-green-400">"Harika bir fikir"</span>
                                         <span className="text-slate-300">)</span>
                                     </div>
-                                    <div className="h-2"></div>
-                                    <div className="flex items-center gap-2">
-                                        <span className="text-slate-500">// ✨ Yapay zeka gücü parmaklarınızın ucunda</span>
+                                    <div className="h-1 md:h-2"></div>
+                                    <div className="flex items-center gap-1 flex-wrap">
+                                        <span className="text-slate-500 text-[0.625rem] sm:text-xs">// ✨ Yapay zeka gücü parmaklarınızın ucunda</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full blur-2xl opacity-50"></div>
-                        <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur-2xl opacity-40"></div>
+                        <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 w-16 h-16 sm:w-24 sm:h-24 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full blur-2xl opacity-50"></div>
+                        <div className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 w-20 h-20 sm:w-32 sm:h-32 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur-2xl opacity-40"></div>
                     </div>
                 </div>
             </div>
@@ -206,6 +206,186 @@ export default function Landing() {
                                 <p className="text-slate-400 text-sm">
                                     Performansı anlık takip edin. Detaylı istatistiklerle kararlarınızı optimize edin.
                                 </p>
+                            </div>
+                        </div>
+                        ```
+                    </div>
+                </div>
+            </div>
+
+
+            {/* Fiyatlandırma Bölümü */}
+            <div id="pricing" className="relative bg-slate-900/50 py-24">
+                <div className="max-w-7xl mx-auto px-6 md:px-8">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+                            Sizin İçin <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Uygun Planı</span> Seçin
+                        </h2>
+                        <p className="text-lg text-slate-400 max-w-2xl mx-auto">
+                            CraftingAI ile yapay zeka gücünü projelerinize entegre edin. Her bütçeye uygun esnek fiyatlandırma seçenekleri.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {/* Starter Plan */}
+                        <div className="group relative bg-slate-800/50 backdrop-blur-sm border border-indigo-900/30 rounded-2xl p-8 hover:border-indigo-500/50 transition-all duration-300 hover:transform hover:-translate-y-2">
+                            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/5 to-purple-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div className="relative">
+                                <div className="mb-6">
+                                    <h3 className="text-2xl font-bold text-white mb-2">Starter</h3>
+                                    <p className="text-slate-400 text-sm">Küçük projeler için ideal</p>
+                                </div>
+                                <div className="mb-8">
+                                    <div className="flex items-baseline gap-2">
+                                        <span className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">₺99</span>
+                                        <span className="text-slate-400">/ay</span>
+                                    </div>
+                                </div>
+                                <ul className="space-y-4 mb-8">
+                                    <li className="flex items-start gap-3">
+                                        <svg className="w-6 h-6 text-indigo-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                        </svg>
+                                        <span className="text-slate-300">1.000 API çağrısı/ay</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <svg className="w-6 h-6 text-indigo-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                        </svg>
+                                        <span className="text-slate-300">Temel AI modelleri</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <svg className="w-6 h-6 text-indigo-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                        </svg>
+                                        <span className="text-slate-300">E-posta desteği</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <svg className="w-6 h-6 text-indigo-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                        </svg>
+                                        <span className="text-slate-300">API dokümantasyonu</span>
+                                    </li>
+                                </ul>
+                                <Link
+                                    href="/register"
+                                    className="block w-full py-3 px-6 text-center text-white font-semibold rounded-xl bg-slate-700 hover:bg-slate-600 transition-all duration-300"
+                                >
+                                    Başla
+                                </Link>
+                            </div>
+                        </div>
+
+                        {/* Pro Plan - Most Popular */}
+                        <div className="group relative bg-gradient-to-b from-indigo-900/30 to-purple-900/30 backdrop-blur-sm border-2 border-indigo-500/50 rounded-2xl p-8 hover:border-indigo-400 transition-all duration-300 hover:transform hover:-translate-y-2 shadow-xl shadow-indigo-500/20">
+                            <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full">
+                                <span className="text-white text-sm font-semibold">En Popüler</span>
+                            </div>
+                            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div className="relative">
+                                <div className="mb-6">
+                                    <h3 className="text-2xl font-bold text-white mb-2">Pro</h3>
+                                    <p className="text-slate-300 text-sm">Büyüyen işletmeler için</p>
+                                </div>
+                                <div className="mb-8">
+                                    <div className="flex items-baseline gap-2">
+                                        <span className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">₺299</span>
+                                        <span className="text-slate-300">/ay</span>
+                                    </div>
+                                </div>
+                                <ul className="space-y-4 mb-8">
+                                    <li className="flex items-start gap-3">
+                                        <svg className="w-6 h-6 text-indigo-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                        </svg>
+                                        <span className="text-white font-medium">10.000 API çağrısı/ay</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <svg className="w-6 h-6 text-indigo-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                        </svg>
+                                        <span className="text-white font-medium">Gelişmiş AI modelleri</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <svg className="w-6 h-6 text-indigo-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                        </svg>
+                                        <span className="text-white font-medium">Öncelikli destek (24/7)</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <svg className="w-6 h-6 text-indigo-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                        </svg>
+                                        <span className="text-white font-medium">Özel entegrasyon desteği</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <svg className="w-6 h-6 text-indigo-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                        </svg>
+                                        <span className="text-white font-medium">Detaylı analitik</span>
+                                    </li>
+                                </ul>
+                                <Link
+                                    href="/register"
+                                    className="block w-full py-3 px-6 text-center text-white font-semibold rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 transition-all duration-300"
+                                >
+                                    Başla
+                                </Link>
+                            </div>
+                        </div>
+
+                        {/* Enterprise Plan */}
+                        <div className="group relative bg-slate-800/50 backdrop-blur-sm border border-indigo-900/30 rounded-2xl p-8 hover:border-indigo-500/50 transition-all duration-300 hover:transform hover:-translate-y-2">
+                            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/5 to-purple-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div className="relative">
+                                <div className="mb-6">
+                                    <h3 className="text-2xl font-bold text-white mb-2">Enterprise</h3>
+                                    <p className="text-slate-400 text-sm">Kurumsal çözümler</p>
+                                </div>
+                                <div className="mb-8">
+                                    <div className="flex items-baseline gap-2">
+                                        <span className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Özel</span>
+                                    </div>
+                                    <p className="text-slate-400 text-sm mt-2">İhtiyaçlarınıza göre</p>
+                                </div>
+                                <ul className="space-y-4 mb-8">
+                                    <li className="flex items-start gap-3">
+                                        <svg className="w-6 h-6 text-indigo-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                        </svg>
+                                        <span className="text-slate-300">Sınırsız API çağrısı</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <svg className="w-6 h-6 text-indigo-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                        </svg>
+                                        <span className="text-slate-300">Tüm AI modelleri</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <svg className="w-6 h-6 text-indigo-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                        </svg>
+                                        <span className="text-slate-300">Özel model eğitimi</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <svg className="w-6 h-6 text-indigo-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                        </svg>
+                                        <span className="text-slate-300">Özel SLA garantisi</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <svg className="w-6 h-6 text-indigo-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                        </svg>
+                                        <span className="text-slate-300">Teknik hesap yöneticisi</span>
+                                    </li>
+                                </ul>
+                                <Link
+                                    href="/contact"
+                                    className="block w-full py-3 px-6 text-center text-white font-semibold rounded-xl bg-slate-700 hover:bg-slate-600 transition-all duration-300"
+                                >
+                                    İletişime Geç
+                                </Link>
                             </div>
                         </div>
                     </div>
