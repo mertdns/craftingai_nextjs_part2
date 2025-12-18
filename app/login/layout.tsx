@@ -23,7 +23,6 @@ export default function LandingLayout({
             </main>
 
             <Footer />
-
         </>
     );
 }

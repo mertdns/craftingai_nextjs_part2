@@ -18,7 +18,7 @@ export default function Header() {
     }
 
     const handleLinkClick = (linkName: string) => {
-        if(pathname == "/landing") setActiveLink(linkName);
+        if (pathname == "/landing") setActiveLink(linkName);
 
         // Mobil menü açıksa kapat
         if (menuState) {
@@ -26,25 +26,9 @@ export default function Header() {
         }
     }
 
-    // Scroll Spy - Sadece kullanıcı scroll yaptığında çalışır
+    // Scroll Spy - Scroll pozisyonuna göre active link günceller
     useEffect(() => {
-        if(pathname == "/landing") setActiveLink("Ana sayfa");
-
-        let isScrolling = false;
-        let scrollTimeout: NodeJS.Timeout;
-
-        // Scroll event listener - kullanıcı scroll yaptığını algıla
-        const handleScroll = () => {
-            isScrolling = true;
-
-            // Scroll bittiğinde flag'i resetle
-            clearTimeout(scrollTimeout);
-            scrollTimeout = setTimeout(() => {
-                isScrolling = false;
-            }, 150);
-        };
-
-        window.addEventListener('scroll', handleScroll);
+        if (pathname == "/landing") setActiveLink("Ana sayfa");
 
         const sections = [
             { id: "header", name: "Ana sayfa" },
@@ -54,39 +38,44 @@ export default function Header() {
             { id: "contact", name: "İletişim" }
         ];
 
-        const observerOptions = {
-            root: null,
-            rootMargin: "-20% 0px -70% 0px",
-            threshold: 0
-        };
+        const handleScroll = () => {
+            // Sayfa en üstteyse Ana sayfa'yı active yap
+            if (window.scrollY < 200) {
+                setActiveLink("Ana sayfa");
+                return;
+            }
 
-        const observerCallback = (entries: IntersectionObserverEntry[]) => {
-            entries.forEach((entry) => {
-                // Sadece kullanıcı scroll yaptıysa güncelle
-                if (entry.isIntersecting && isScrolling) {
-                    const section = sections.find(s => s.id === entry.target.id);
-                    if (section) {
-                        setActiveLink(section.name);
+            // Her section'ın pozisyonunu kontrol et
+            let currentSection = "Ana sayfa";
+
+            sections.forEach(({ id, name }) => {
+                const element = document.getElementById(id);
+                if (element) {
+                    const rect = element.getBoundingClientRect();
+                    const elementTop = rect.top + window.scrollY;
+                    const elementHeight = rect.height;
+
+                    // Section viewport içinde mi kontrol et
+                    if (window.scrollY >= elementTop - 150 &&
+                        window.scrollY < elementTop + elementHeight - 150) {
+                        currentSection = name;
                     }
                 }
             });
+
+            setActiveLink(currentSection);
         };
 
-        const observer = new IntersectionObserver(observerCallback, observerOptions);
+        // İlk yüklemede çalıştır
+        handleScroll();
 
-        sections.forEach(({ id }) => {
-            const element = document.getElementById(id);
-            if (element) {
-                observer.observe(element);
-            }
-        });
+        // Scroll event listener ekle
+        window.addEventListener('scroll', handleScroll);
 
         return () => {
             window.removeEventListener('scroll', handleScroll);
-            clearTimeout(scrollTimeout);
-            observer.disconnect();
         };
-    }, []);
+    }, [pathname]);
 
     const activeLinkStyle = "px-4 py-2 block bg-gradient-to-r from-indigo-500 to-purple-500 text-transparent bg-clip-text border-b border-indigo-500 text-base font-medium rounded-lg transition-all duration-300";
     const normalLinkStyle = "px-4 py-2 block text-slate-200 text-base font-medium hover:text-white hover:bg-indigo-900/40 rounded-lg transition-all duration-300";
