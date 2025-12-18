@@ -1,0 +1,184 @@
+{
+    "hero": {
+        "badge": "Yapay Zeka Destekli Çözümler",
+        "title": {
+            "line1": "Geleceği",
+            "line2": "Bugünden İnşa Et"
+        },
+        "subtitle": "CraftingAI ile yapay zeka destekli çözümlerle projelerinizi bir sonraki seviyeye taşıyın. Hızlı, güvenilir ve kolay kullanımlı AI araçlarıyla hayallerinizdeki uygulamayı oluşturun.",
+        "stats": {
+            "users": {
+                "value": "10K+",
+                "label": "Aktif Kullanıcı"
+            },
+            "apiCalls": {
+                "value": "50K+",
+                "label": "API Çağrısı"
+            },
+            "uptime": {
+                "value": "99.9%",
+                "label": "Uptime"
+            },
+            "support": {
+                "value": "24/7",
+                "label": "Destek"
+            }
+        }
+    },
+    "features": {
+        "title": "Yapay Zeka Gücünü",
+        "titleHighlight": "Elinizin Altına",
+        "titleEnd": "Alın",
+        "subtitle": "CraftingAI ile projelerinizi hızla geliştirin, zamandan tasarruf edin ve kullanıcı deneyimini bir üst seviyeye taşıyın.",
+        "items": {
+            "integration": {
+                "title": "Hızlı Entegrasyon",
+                "description": "Dakikalar içinde projenize entegre edin. Karmaşık konfigürasyonlara veda edin."
+            },
+            "security": {
+                "title": "Güvenli & Güvenilir",
+                "description": "Verileriniz uçtan uca şifrelenir. %99.9 uptime garantisi ile her zaman yanınızdayız."
+            },
+            "customization": {
+                "title": "Kolay Özelleştirme",
+                "description": "İhtiyaçlarınıza göre uyarlayın. Esnek API yapısı ile tam kontrol sizde."
+            },
+            "analytics": {
+                "title": "Gerçek Zamanlı Analitik",
+                "description": "Performansı anlık takip edin. Detaylı istatistiklerle kararlarınızı optimize edin."
+            }
+        }
+    },
+    "pricing": {
+        "title": "Sizin İçin",
+        "titleHighlight": "Uygun Planı",
+        "titleEnd": "Seçin",
+        "subtitle": "CraftingAI ile yapay zeka gücünü projelerinize entegre edin. Her bütçeye uygun esnek fiyatlandırma seçenekleri.",
+        "plans": {
+            "starter": {
+                "name": "Starter",
+                "description": "Küçük projeler için ideal",
+                "price": "₺99",
+                "period": "/ay",
+                "features": {
+                    "apiCalls": "1.000 API çağrısı/ay",
+                    "models": "Temel AI modelleri",
+                    "support": "E-posta desteği",
+                    "docs": "API dokümantasyonu"
+                }
+            },
+            "pro": {
+                "name": "Pro",
+                "badge": "En Popüler",
+                "description": "Büyüyen işletmeler için",
+                "price": "₺299",
+                "period": "/ay",
+                "features": {
+                    "apiCalls": "10.000 API çağrısı/ay",
+                    "models": "Gelişmiş AI modelleri",
+                    "support": "Öncelikli destek (24/7)",
+                    "integration": "Özel entegrasyon desteği",
+                    "analytics": "Detaylı analitik"
+                }
+            },
+            "enterprise": {
+                "name": "Enterprise",
+                "description": "Kurumsal çözümler",
+                "price": "Özel",
+                "priceNote": "İhtiyaçlarınıza göre",
+                "features": {
+                    "apiCalls": "Sınırsız API çağrısı",
+                    "models": "Tüm AI modelleri",
+                    "training": "Özel model eğitimi",
+                    "sla": "Özel SLA garantisi",
+                    "manager": "Teknik hesap yöneticisi"
+                }
+            }
+        }
+    },
+    "about": {
+        "title": "Biz",
+        "titleHighlight": "Kimiz?",
+        "subtitle": "Markanızı yükselten ve kitlenizi ilham veren yenilikçi dijital deneyimler yaratıyoruz.",
+        "description": "Tutkulu ekibimiz, vizyonunuzu yaşama geçirmek için yaratıcılığı ve son teknoloji araçları bir araya getiriyor. Her projede mükemmelliği hedefliyoruz.",
+        "features": {
+            "team": {
+                "title": "Uzman Ekip",
+                "description": "Her projede mükemmelliği sunmaya kararlı tutkulu uzmanlar grubu."
+            },
+            "innovation": {
+                "title": "Yenilikçi Yaklaşım",
+                "description": "Size özel benzersiz çözümler yaratmak için yaratıcılığı ve teknolojiyi benimsiyoruz."
+            },
+            "customer": {
+                "title": "Müşteri Odaklı",
+                "description": "Memnuniyetiniz önceliğimiz — dinliyor, uyum sağlıyor ve beklentilerin ötesinde sunuyoruz."
+            }
+        }
+    },
+    "contact": {
+        "title": "Bizimle",
+        "titleHighlight": "İletişime Geçin",
+        "subtitle": "Sorularınız mı var? Projeleriniz için özel çözümler mi arıyorsunuz? Size yardımcı olmak için buradayız.",
+        "form": {
+            "name": "Adınız",
+            "namePlaceholder": "Adınızı girin",
+            "email": "E-posta Adresiniz",
+            "emailPlaceholder": "ornek@email.com",
+            "subject": "Konu",
+            "subjectPlaceholder": "Mesajınızın konusu",
+            "message": "Mesajınız",
+            "messagePlaceholder": "Mesajınızı buraya yazın..."
+        },
+        "info": {
+            "email": {
+                "title": "E-posta",
+                "value": "info@craftingai.com"
+            },
+            "phone": {
+                "title": "Telefon",
+                "value": "+90 (555) 123 45 67"
+            },
+            "address": {
+                "title": "Adres",
+                "value": "İstanbul, Türkiye"
+            }
+        }
+    },
+    "login": {
+        "title": "Tekrar Hoş Geldiniz",
+        "subtitle": "CraftingAI hesabınıza giriş yapın",
+        "googleLogin": "Google ile Giriş",
+        "or": "veya",
+        "email": "E-posta Adresi",
+        "emailPlaceholder": "ornek@email.com",
+        "password": "Şifre",
+        "rememberMe": "Beni Hatırla",
+        "forgotPassword": "Şifremi Unuttum",
+        "loginButton": "Giriş Yap",
+        "noAccount": "Hesabınız yok mu?",
+        "signUp": "Hesap Oluştur"
+    },
+    "register": {
+        "title": "Hesap Oluşturun",
+        "subtitle": "CraftingAI ile yapay zeka dünyasına katılın",
+        "googleSignup": "Google ile Kayıt Ol",
+        "or": "veya",
+        "name": "Ad Soyad",
+        "namePlaceholder": "Adınız Soyadınız",
+        "email": "E-posta Adresi",
+        "emailPlaceholder": "ornek@email.com",
+        "password": "Şifre",
+        "passwordPlaceholder": "En az 8 karakter",
+        "confirmPassword": "Şifre Tekrar",
+        "confirmPasswordPlaceholder": "Şifrenizi tekrar girin",
+        "registerButton": "Kayıt Ol",
+        "termsText": "Kayıt olarak",
+        "termsLink": "Kullanım Şartları",
+        "and": "ve",
+        "privacyLink": "Gizlilik Politikası",
+        "termsEnd": "'nı kabul etmiş olursunuz.",
+        "haveAccount": "Zaten hesabınız var mı?",
+        "signIn": "Giriş Yapın"
+    }
+}

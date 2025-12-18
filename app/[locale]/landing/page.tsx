@@ -1,6 +1,27 @@
 import Link from "next/link";
+import { locales } from "@/i18n";
+import { getTranslations } from 'next-intl/server';
 
-export default function Landing() {
+// Static params oluştur - her locale için
+export function generateStaticParams() {
+    return locales.map((locale) => ({
+        locale: locale
+    }));
+}
+
+
+export default async function Landing({
+    params
+}: {
+    params: Promise<{ locale: string }>;
+}) {
+    // Next.js 16'da params bir Promise
+    const { locale } = await params;
+
+    // Çevirileri al
+    const t = await getTranslations({ locale, namespace: 'landing' });
+    const tButtons = await getTranslations({ locale, namespace: 'buttons' });
+
     return (
         <div className="min-h-screen bg-gradient-to-b from-slate-900 via-indigo-950 to-slate-900 relative overflow-hidden">
             {/* Animasyonlu Arka Plan Efektleri */}
@@ -16,31 +37,30 @@ export default function Landing() {
                     {/* Badge */}
                     <div className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-900/30 border border-indigo-500/30 rounded-full backdrop-blur-sm">
                         <span className="w-2 h-2 bg-indigo-400 rounded-full animate-pulse"></span>
-                        <span className="text-sm text-indigo-200 font-medium">Yapay Zeka Destekli Çözümler</span>
+                        <span className="text-sm text-indigo-200 font-medium">{t('hero.badge')}</span>
                     </div>
 
                     {/* Ana Başlık */}
                     <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-                        <span className="text-white">Geleceği</span>
+                        <span className="text-white">{t('hero.title.line1')}</span>
                         <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 animate-gradient">
-                            Bugünden İnşa Et
+                            {t('hero.title.line2')}
                         </span>
                     </h1>
 
                     {/* Alt Başlık */}
                     <p className="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
-                        CraftingAI ile yapay zeka destekli çözümlerle projelerinizi bir sonraki seviyeye taşıyın.
-                        Hızlı, güvenilir ve kolay kullanımlı AI araçlarıyla hayallerinizdeki uygulamayı oluşturun.
+                        {t('hero.subtitle')}
                     </p>
 
                     {/* CTA Butonları */}
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
                         <Link
-                            href="/register"
+                            href={`/${locale}/register`}
                             className="group px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl font-semibold shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 hover:scale-105 transition-all duration-300 flex items-center gap-2"
                         >
-                            Hemen Başla
+                            {tButtons('getStarted')}
                             <svg
                                 className="w-5 h-5 group-hover:translate-x-1 transition-transform"
                                 fill="none"
@@ -51,10 +71,10 @@ export default function Landing() {
                             </svg>
                         </Link>
                         <Link
-                            href="/docs"
+                            href={`/${locale}/docs`}
                             className="px-8 py-4 bg-slate-800/50 border border-indigo-500/30 text-slate-200 rounded-xl font-semibold hover:bg-slate-800/70 hover:border-indigo-500/50 transition-all duration-300 backdrop-blur-sm"
                         >
-                            Dökümantasyon
+                            {tButtons('documentation')}
                         </Link>
                     </div>
 
@@ -62,27 +82,27 @@ export default function Landing() {
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-16 max-w-4xl mx-auto">
                         <div className="space-y-2">
                             <div className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
-                                10K+
+                                {t('hero.stats.users.value')}
                             </div>
-                            <div className="text-sm text-slate-400">Aktif Kullanıcı</div>
+                            <div className="text-sm text-slate-400">{t('hero.stats.users.label')}</div>
                         </div>
                         <div className="space-y-2">
                             <div className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                                50K+
+                                {t('hero.stats.apiCalls.value')}
                             </div>
-                            <div className="text-sm text-slate-400">API Çağrısı</div>
+                            <div className="text-sm text-slate-400">{t('hero.stats.apiCalls.label')}</div>
                         </div>
                         <div className="space-y-2">
                             <div className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
-                                99.9%
+                                {t('hero.stats.uptime.value')}
                             </div>
-                            <div className="text-sm text-slate-400">Uptime</div>
+                            <div className="text-sm text-slate-400">{t('hero.stats.uptime.label')}</div>
                         </div>
                         <div className="space-y-2">
                             <div className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                                24/7
+                                {t('hero.stats.support.value')}
                             </div>
-                            <div className="text-sm text-slate-400">Destek</div>
+                            <div className="text-sm text-slate-400">{t('hero.stats.support.label')}</div>
                         </div>
                     </div>
                 </div>
@@ -137,10 +157,10 @@ export default function Landing() {
                 <div className="max-w-7xl mx-auto px-6 md:px-8">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-                            Yapay Zeka Gücünü <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Elinizin Altına</span> Alın
+                            {t('features.title')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">{t('features.titleHighlight')}</span> {t('features.titleEnd')}
                         </h2>
                         <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-                            CraftingAI ile projelerinizi hızla geliştirin, zamandan tasarruf edin ve kullanıcı deneyimini bir üst seviyeye taşıyın.
+                            {t('features.subtitle')}
                         </p>
                     </div>
 
@@ -154,9 +174,9 @@ export default function Landing() {
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                                     </svg>
                                 </div>
-                                <h3 className="text-xl font-semibold text-white mb-2">Hızlı Entegrasyon</h3>
+                                <h3 className="text-xl font-semibold text-white mb-2">{t('features.items.integration.title')}</h3>
                                 <p className="text-slate-400 text-sm">
-                                    Dakikalar içinde projenize entegre edin. Karmaşık konfigürasyonlara veda edin.
+                                    {t('features.items.integration.description')}
                                 </p>
                             </div>
                         </div>
@@ -170,9 +190,9 @@ export default function Landing() {
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                                     </svg>
                                 </div>
-                                <h3 className="text-xl font-semibold text-white mb-2">Güvenli & Güvenilir</h3>
+                                <h3 className="text-xl font-semibold text-white mb-2">{t('features.items.security.title')}</h3>
                                 <p className="text-slate-400 text-sm">
-                                    Verileriniz uçtan uca şifrelenir. %99.9 uptime garantisi ile her zaman yanınızdayız.
+                                    {t('features.items.security.description')}
                                 </p>
                             </div>
                         </div>
@@ -186,9 +206,9 @@ export default function Landing() {
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
                                     </svg>
                                 </div>
-                                <h3 className="text-xl font-semibold text-white mb-2">Kolay Özelleştirme</h3>
+                                <h3 className="text-xl font-semibold text-white mb-2">{t('features.items.customization.title')}</h3>
                                 <p className="text-slate-400 text-sm">
-                                    İhtiyaçlarınıza göre uyarlayın. Esnek API yapısı ile tam kontrol sizde.
+                                    {t('features.items.customization.description')}
                                 </p>
                             </div>
                         </div>
@@ -202,26 +222,25 @@ export default function Landing() {
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                                     </svg>
                                 </div>
-                                <h3 className="text-xl font-semibold text-white mb-2">Gerçek Zamanlı Analitik</h3>
+                                <h3 className="text-xl font-semibold text-white mb-2">{t('features.items.analytics.title')}</h3>
                                 <p className="text-slate-400 text-sm">
-                                    Performansı anlık takip edin. Detaylı istatistiklerle kararlarınızı optimize edin.
+                                    {t('features.items.analytics.description')}
                                 </p>
                             </div>
                         </div>
-                        ```
-                    </div>
-                </div>
-            </div>
+                    </div >
+                </div >
+            </div >
 
             {/* Fiyatlandırma Bölümü */}
-            <div id="pricing" className="relative bg-slate-900/50 py-24">
+            < div id="pricing" className="relative bg-slate-900/50 py-24" >
                 <div className="max-w-7xl mx-auto px-6 md:px-8">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-                            Sizin İçin <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Uygun Planı</span> Seçin
+                            {t('pricing.title')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">{t('pricing.titleHighlight')}</span> {t('pricing.titleEnd')}
                         </h2>
                         <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-                            CraftingAI ile yapay zeka gücünü projelerinize entegre edin. Her bütçeye uygun esnek fiyatlandırma seçenekleri.
+                            {t('pricing.subtitle')}
                         </p>
                     </div>
 
@@ -231,13 +250,13 @@ export default function Landing() {
                             <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/5 to-purple-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             <div className="relative">
                                 <div className="mb-6">
-                                    <h3 className="text-2xl font-bold text-white mb-2">Starter</h3>
-                                    <p className="text-slate-400 text-sm">Küçük projeler için ideal</p>
+                                    <h3 className="text-2xl font-bold text-white mb-2">{t('pricing.plans.starter.name')}</h3>
+                                    <p className="text-slate-400 text-sm">{t('pricing.plans.starter.description')}</p>
                                 </div>
                                 <div className="mb-8">
                                     <div className="flex items-baseline gap-2">
-                                        <span className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">₺99</span>
-                                        <span className="text-slate-400">/ay</span>
+                                        <span className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">{t('pricing.plans.starter.price')}</span>
+                                        <span className="text-slate-400">{t('pricing.plans.starter.period')}</span>
                                     </div>
                                 </div>
                                 <ul className="space-y-4 mb-8">
@@ -245,32 +264,32 @@ export default function Landing() {
                                         <svg className="w-6 h-6 text-indigo-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                         </svg>
-                                        <span className="text-slate-300">1.000 API çağrısı/ay</span>
+                                        <span className="text-slate-300">{t('pricing.plans.starter.features.apiCalls')}</span>
                                     </li>
                                     <li className="flex items-start gap-3">
                                         <svg className="w-6 h-6 text-indigo-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                         </svg>
-                                        <span className="text-slate-300">Temel AI modelleri</span>
+                                        <span className="text-slate-300">{t('pricing.plans.starter.features.models')}</span>
                                     </li>
                                     <li className="flex items-start gap-3">
                                         <svg className="w-6 h-6 text-indigo-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                         </svg>
-                                        <span className="text-slate-300">E-posta desteği</span>
+                                        <span className="text-slate-300">{t('pricing.plans.starter.features.support')}</span>
                                     </li>
                                     <li className="flex items-start gap-3">
                                         <svg className="w-6 h-6 text-indigo-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                         </svg>
-                                        <span className="text-slate-300">API dokümantasyonu</span>
+                                        <span className="text-slate-300">{t('pricing.plans.starter.features.docs')}</span>
                                     </li>
                                 </ul>
                                 <Link
-                                    href="/register"
+                                    href={`/${locale}/register`}
                                     className="block w-full py-3 px-6 text-center text-white font-semibold rounded-xl bg-slate-700 hover:bg-slate-600 transition-all duration-300"
                                 >
-                                    Başla
+                                    {tButtons('start')}
                                 </Link>
                             </div>
                         </div>
@@ -278,18 +297,18 @@ export default function Landing() {
                         {/* Pro Plan - Most Popular */}
                         <div className="group relative bg-gradient-to-b from-indigo-900/30 to-purple-900/30 backdrop-blur-sm border-2 border-indigo-500/50 rounded-2xl p-8 hover:border-indigo-400 transition-all duration-300 hover:transform hover:-translate-y-2 shadow-xl shadow-indigo-500/20">
                             <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full">
-                                <span className="text-white text-sm font-semibold">En Popüler</span>
+                                <span className="text-white text-sm font-semibold">{t('pricing.plans.pro.badge')}</span>
                             </div>
                             <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             <div className="relative">
                                 <div className="mb-6">
-                                    <h3 className="text-2xl font-bold text-white mb-2">Pro</h3>
-                                    <p className="text-slate-300 text-sm">Büyüyen işletmeler için</p>
+                                    <h3 className="text-2xl font-bold text-white mb-2">{t('pricing.plans.pro.name')}</h3>
+                                    <p className="text-slate-300 text-sm">{t('pricing.plans.pro.description')}</p>
                                 </div>
                                 <div className="mb-8">
                                     <div className="flex items-baseline gap-2">
-                                        <span className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">₺299</span>
-                                        <span className="text-slate-300">/ay</span>
+                                        <span className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">{t('pricing.plans.pro.price')}</span>
+                                        <span className="text-slate-300">{t('pricing.plans.pro.period')}</span>
                                     </div>
                                 </div>
                                 <ul className="space-y-4 mb-8">
@@ -297,38 +316,38 @@ export default function Landing() {
                                         <svg className="w-6 h-6 text-indigo-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                         </svg>
-                                        <span className="text-white font-medium">10.000 API çağrısı/ay</span>
+                                        <span className="text-white font-medium">{t('pricing.plans.pro.features.apiCalls')}</span>
                                     </li>
                                     <li className="flex items-start gap-3">
                                         <svg className="w-6 h-6 text-indigo-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                         </svg>
-                                        <span className="text-white font-medium">Gelişmiş AI modelleri</span>
+                                        <span className="text-white font-medium">{t('pricing.plans.pro.features.models')}</span>
                                     </li>
                                     <li className="flex items-start gap-3">
                                         <svg className="w-6 h-6 text-indigo-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                         </svg>
-                                        <span className="text-white font-medium">Öncelikli destek (24/7)</span>
+                                        <span className="text-white font-medium">{t('pricing.plans.pro.features.support')}</span>
                                     </li>
                                     <li className="flex items-start gap-3">
                                         <svg className="w-6 h-6 text-indigo-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                         </svg>
-                                        <span className="text-white font-medium">Özel entegrasyon desteği</span>
+                                        <span className="text-white font-medium">{t('pricing.plans.pro.features.integration')}</span>
                                     </li>
                                     <li className="flex items-start gap-3">
                                         <svg className="w-6 h-6 text-indigo-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                         </svg>
-                                        <span className="text-white font-medium">Detaylı analitik</span>
+                                        <span className="text-white font-medium">{t('pricing.plans.pro.features.analytics')}</span>
                                     </li>
                                 </ul>
                                 <Link
-                                    href="/register"
+                                    href={`/${locale}/register`}
                                     className="block w-full py-3 px-6 text-center text-white font-semibold rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 transition-all duration-300"
                                 >
-                                    Başla
+                                    {tButtons('start')}
                                 </Link>
                             </div>
                         </div>
@@ -338,63 +357,63 @@ export default function Landing() {
                             <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/5 to-purple-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             <div className="relative">
                                 <div className="mb-6">
-                                    <h3 className="text-2xl font-bold text-white mb-2">Enterprise</h3>
-                                    <p className="text-slate-400 text-sm">Kurumsal çözümler</p>
+                                    <h3 className="text-2xl font-bold text-white mb-2">{t('pricing.plans.enterprise.name')}</h3>
+                                    <p className="text-slate-400 text-sm">{t('pricing.plans.enterprise.description')}</p>
                                 </div>
                                 <div className="mb-8">
                                     <div className="flex items-baseline gap-2">
-                                        <span className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Özel</span>
+                                        <span className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">{t('pricing.plans.enterprise.price')}</span>
                                     </div>
-                                    <p className="text-slate-400 text-sm mt-2">İhtiyaçlarınıza göre</p>
+                                    <p className="text-slate-400 text-sm mt-2">{t('pricing.plans.enterprise.priceNote')}</p>
                                 </div>
                                 <ul className="space-y-4 mb-8">
                                     <li className="flex items-start gap-3">
                                         <svg className="w-6 h-6 text-indigo-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                         </svg>
-                                        <span className="text-slate-300">Sınırsız API çağrısı</span>
+                                        <span className="text-slate-300">{t('pricing.plans.enterprise.features.apiCalls')}</span>
                                     </li>
                                     <li className="flex items-start gap-3">
                                         <svg className="w-6 h-6 text-indigo-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                         </svg>
-                                        <span className="text-slate-300">Tüm AI modelleri</span>
+                                        <span className="text-slate-300">{t('pricing.plans.enterprise.features.models')}</span>
                                     </li>
                                     <li className="flex items-start gap-3">
                                         <svg className="w-6 h-6 text-indigo-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                         </svg>
-                                        <span className="text-slate-300">Özel model eğitimi</span>
+                                        <span className="text-slate-300">{t('pricing.plans.enterprise.features.training')}</span>
                                     </li>
                                     <li className="flex items-start gap-3">
                                         <svg className="w-6 h-6 text-indigo-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                         </svg>
-                                        <span className="text-slate-300">Özel SLA garantisi</span>
+                                        <span className="text-slate-300">{t('pricing.plans.enterprise.features.sla')}</span>
                                     </li>
                                     <li className="flex items-start gap-3">
                                         <svg className="w-6 h-6 text-indigo-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                         </svg>
-                                        <span className="text-slate-300">Teknik hesap yöneticisi</span>
+                                        <span className="text-slate-300">{t('pricing.plans.enterprise.features.manager')}</span>
                                     </li>
                                 </ul>
                                 <Link
-                                    href="/contact"
+                                    href={`/${locale}/contact`}
                                     className="block w-full py-3 px-6 text-center text-white font-semibold rounded-xl bg-slate-700 hover:bg-slate-600 transition-all duration-300"
                                 >
-                                    İletişime Geç
+                                    {tButtons('contactUs')}
                                 </Link>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div >
 
             {/* Hakkımızda Bölümü */}
-            <div id="about" className="relative bg-slate-900/50 py-24 overflow-hidden">
+            < div id="about" className="relative bg-slate-900/50 py-24 overflow-hidden" >
                 {/* SVG Pattern Background */}
-                <div className="absolute inset-0 w-full h-full">
+                < div className="absolute inset-0 w-full h-full" >
                     <svg className="w-full h-full" viewBox="0 0 1440 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                         <defs>
                             <pattern id="dots" patternUnits="userSpaceOnUse" width="40" height="40" patternTransform="rotate(45)">
@@ -403,15 +422,15 @@ export default function Landing() {
                         </defs>
                         <rect width="1440" height="800" fill="url(#dots)" />
                     </svg>
-                </div>
+                </div >
 
                 <div className="max-w-7xl mx-auto px-6 md:px-8">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-                            Biz <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Kimiz?</span>
+                            {t('about.title')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">{t('about.titleHighlight')}</span>
                         </h2>
                         <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-                            Markanızı yükselten ve kitlenizi ilham veren yenilikçi dijital deneyimler yaratıyoruz.
+                            {t('about.subtitle')}
                         </p>
                     </div>
 
@@ -422,7 +441,7 @@ export default function Landing() {
                             <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/5 to-purple-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             <div className="relative">
                                 <p className="text-slate-300 mb-8 text-lg leading-relaxed">
-                                    Tutkulu ekibimiz, vizyonunuzu yaşama geçirmek için yaratıcılığı ve son teknoloji araçları bir araya getiriyor. Her projede mükemmelliği hedefliyoruz.
+                                    {t('about.description')}
                                 </p>
                                 <div className="space-y-6">
                                     {/* Feature Cards */}
@@ -434,8 +453,8 @@ export default function Landing() {
                                             </svg>
                                         </div>
                                         <div>
-                                            <h3 className="text-xl font-semibold text-white mb-1">Uzman Ekip</h3>
-                                            <p className="text-slate-400 text-sm">Her projede mükemmelliği sunmaya kararlı tutkulu uzmanlar grubu.</p>
+                                            <h3 className="text-xl font-semibold text-white mb-1">{t('about.features.team.title')}</h3>
+                                            <p className="text-slate-400 text-sm">{t('about.features.team.description')}</p>
                                         </div>
                                     </div>
 
@@ -447,8 +466,8 @@ export default function Landing() {
                                             </svg>
                                         </div>
                                         <div>
-                                            <h3 className="text-xl font-semibold text-white mb-1">Yenilikçi Yaklaşım</h3>
-                                            <p className="text-slate-400 text-sm">Size özel benzersiz çözümler yaratmak için yaratıcılığı ve teknolojiyi benimsiyoruz.</p>
+                                            <h3 className="text-xl font-semibold text-white mb-1">{t('about.features.innovation.title')}</h3>
+                                            <p className="text-slate-400 text-sm">{t('about.features.innovation.description')}</p>
                                         </div>
                                     </div>
 
@@ -460,8 +479,8 @@ export default function Landing() {
                                             </svg>
                                         </div>
                                         <div>
-                                            <h3 className="text-xl font-semibold text-white mb-1">Müşteri Odaklı</h3>
-                                            <p className="text-slate-400 text-sm">Memnuniyetiniz önceliğimiz — dinliyor, uyum sağlıyor ve beklentilerin ötesinde sunuyoruz.</p>
+                                            <h3 className="text-xl font-semibold text-white mb-1">{t('about.features.customer.title')}</h3>
+                                            <p className="text-slate-400 text-sm">{t('about.features.customer.description')}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -482,17 +501,17 @@ export default function Landing() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div >
 
             {/* İletişim Bölümü */}
-            <div id="contact" className="relative bg-slate-900/50 py-24">
+            < div id="contact" className="relative bg-slate-900/50 py-24" >
                 <div className="max-w-7xl mx-auto px-6 md:px-8">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-                            Bizimle <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">İletişime Geçin</span>
+                            {t('contact.title')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">{t('contact.titleHighlight')}</span>
                         </h2>
                         <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-                            Sorularınız mı var? Projeleriniz için özel çözümler mi arıyorsunuz? Size yardımcı olmak için buradayız.
+                            {t('contact.subtitle')}
                         </p>
                     </div>
 
@@ -504,54 +523,54 @@ export default function Landing() {
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <div>
                                             <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">
-                                                Adınız
+                                                {t('contact.form.name')}
                                             </label>
                                             <input
                                                 type="text"
                                                 id="name"
                                                 className="w-full px-4 py-3 rounded-xl bg-slate-900/50 border border-indigo-900/30 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300"
-                                                placeholder="Adınızı girin"
+                                                placeholder={t('contact.form.namePlaceholder')}
                                             />
                                         </div>
                                         <div>
                                             <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">
-                                                E-posta Adresiniz
+                                                {t('contact.form.email')}
                                             </label>
                                             <input
                                                 type="email"
                                                 id="email"
                                                 className="w-full px-4 py-3 rounded-xl bg-slate-900/50 border border-indigo-900/30 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300"
-                                                placeholder="ornek@email.com"
+                                                placeholder={t('contact.form.emailPlaceholder')}
                                             />
                                         </div>
                                     </div>
                                     <div>
                                         <label htmlFor="subject" className="block text-sm font-medium text-slate-300 mb-2">
-                                            Konu
+                                            {t('contact.form.subject')}
                                         </label>
                                         <input
                                             type="text"
                                             id="subject"
                                             className="w-full px-4 py-3 rounded-xl bg-slate-900/50 border border-indigo-900/30 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300"
-                                            placeholder="Mesajınızın konusu"
+                                            placeholder={t('contact.form.subjectPlaceholder')}
                                         />
                                     </div>
                                     <div>
                                         <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-2">
-                                            Mesajınız
+                                            {t('contact.form.message')}
                                         </label>
                                         <textarea
                                             id="message"
                                             rows={6}
                                             className="w-full px-4 py-3 rounded-xl bg-slate-900/50 border border-indigo-900/30 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300 resize-none"
-                                            placeholder="Mesajınızı buraya yazın..."
+                                            placeholder={t('contact.form.messagePlaceholder')}
                                         ></textarea>
                                     </div>
                                     <button
                                         type="submit"
                                         className="group w-full py-4 px-6 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl font-semibold shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2"
                                     >
-                                        Mesaj Gönder
+                                        {tButtons('sendMessage')}
                                         <svg
                                             className="w-5 h-5 group-hover:translate-x-1 transition-transform"
                                             fill="none"
@@ -573,8 +592,8 @@ export default function Landing() {
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                     </svg>
                                 </div>
-                                <h4 className="text-white font-semibold mb-1">E-posta</h4>
-                                <p className="text-slate-400 text-sm">info@craftingai.com</p>
+                                <h4 className="text-white font-semibold mb-1">{t('contact.info.email.title')}</h4>
+                                <p className="text-slate-400 text-sm">{t('contact.info.email.value')}</p>
                             </div>
                             <div className="text-center p-6 bg-slate-800/30 backdrop-blur-sm border border-indigo-900/30 rounded-xl hover:border-indigo-500/50 transition-all duration-300">
                                 <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mx-auto mb-4">
@@ -582,8 +601,8 @@ export default function Landing() {
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                                     </svg>
                                 </div>
-                                <h4 className="text-white font-semibold mb-1">Telefon</h4>
-                                <p className="text-slate-400 text-sm">+90 (555) 123 45 67</p>
+                                <h4 className="text-white font-semibold mb-1">{t('contact.info.phone.title')}</h4>
+                                <p className="text-slate-400 text-sm">{t('contact.info.phone.value')}</p>
                             </div>
                             <div className="text-center p-6 bg-slate-800/30 backdrop-blur-sm border border-indigo-900/30 rounded-xl hover:border-indigo-500/50 transition-all duration-300">
                                 <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center mx-auto mb-4">
@@ -592,13 +611,13 @@ export default function Landing() {
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                     </svg>
                                 </div>
-                                <h4 className="text-white font-semibold mb-1">Adres</h4>
-                                <p className="text-slate-400 text-sm">İstanbul, Türkiye</p>
+                                <h4 className="text-white font-semibold mb-1">{t('contact.info.address.title')}</h4>
+                                <p className="text-slate-400 text-sm">{t('contact.info.address.value')}</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div >
+        </div >
     )
 }

@@ -1,0 +1,52 @@
+{
+    "header": {
+        "home": "Ana sayfa",
+        "features": "Özellikler",
+        "pricing": "Fiyatlandırma",
+        "about": "Hakkımızda",
+        "contact": "İletişim",
+        "login": "Giriş Yap",
+        "register": "Kayıt Ol"
+    },
+    "footer": {
+        "description": "Yapay zeka destekli çözümlerle geleceği bugünden inşa ediyoruz. Projelerinizi bir sonraki seviyeye taşıyın.",
+        "quickLinks": {
+            "title": "Hızlı Linkler",
+            "home": "Ana Sayfa",
+            "pricing": "Fiyatlandırma",
+            "about": "Hakkımızda",
+            "docs": "Dökümantasyon"
+        },
+        "support": {
+            "title": "Destek",
+            "contact": "İletişim",
+            "faq": "SSS",
+            "helpCenter": "Yardım Merkezi",
+            "apiDocs": "API Dokümantasyonu"
+        },
+        "newsletter": {
+            "title": "Bültenimize Katılın",
+            "description": "Yeni özellikler ve güncellemelerden haberdar olun.",
+            "emailPlaceholder": "E-posta adresiniz",
+            "subscribe": "Abone Ol"
+        },
+        "copyright": "© 2025 CraftingAI. Tüm hakları saklıdır.",
+        "legal": {
+            "privacy": "Gizlilik Politikası",
+            "terms": "Kullanım Şartları",
+            "cookies": "Çerez Politikası"
+        }
+    },
+    "languageSwitcher": {
+        "turkish": "Türkçe",
+        "english": "English"
+    },
+    "buttons": {
+        "getStarted": "Hemen Başla",
+        "learnMore": "Daha Fazla",
+        "documentation": "Dökümantasyon",
+        "sendMessage": "Mesaj Gönder",
+        "start": "Başla",
+        "contactUs": "İletişime Geç"
+    }
+}

@@ -1,0 +1,52 @@
+{
+    "header": {
+        "home": "Home",
+        "features": "Features",
+        "pricing": "Pricing",
+        "about": "About",
+        "contact": "Contact",
+        "login": "Sign In",
+        "register": "Sign Up"
+    },
+    "footer": {
+        "description": "Building the future today with AI-powered solutions. Take your projects to the next level.",
+        "quickLinks": {
+            "title": "Quick Links",
+            "home": "Home",
+            "pricing": "Pricing",
+            "about": "About",
+            "docs": "Documentation"
+        },
+        "support": {
+            "title": "Support",
+            "contact": "Contact",
+            "faq": "FAQ",
+            "helpCenter": "Help Center",
+            "apiDocs": "API Documentation"
+        },
+        "newsletter": {
+            "title": "Join Our Newsletter",
+            "description": "Stay updated with new features and updates.",
+            "emailPlaceholder": "Your email address",
+            "subscribe": "Subscribe"
+        },
+        "copyright": "© 2025 CraftingAI. All rights reserved.",
+        "legal": {
+            "privacy": "Privacy Policy",
+            "terms": "Terms of Service",
+            "cookies": "Cookie Policy"
+        }
+    },
+    "languageSwitcher": {
+        "turkish": "Türkçe",
+        "english": "English"
+    },
+    "buttons": {
+        "getStarted": "Get Started",
+        "learnMore": "Learn More",
+        "documentation": "Documentation",
+        "sendMessage": "Send Message",
+        "start": "Start",
+        "contactUs": "Contact Us"
+    }
+}

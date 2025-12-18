@@ -1,6 +1,11 @@
+"use client";
+
 import Link from "next/link";
+import { useTranslations } from 'next-intl';
 
 export default function Footer() {
+    const t = useTranslations('footer');
+
     return (
         <footer className="bg-gradient-to-b from-slate-900 via-indigo-950 to-slate-950 border-t border-indigo-900/30">
             <div className="max-w-7xl mx-auto px-6 md:px-8">
@@ -12,7 +17,7 @@ export default function Footer() {
                             CraftingAI
                         </h2>
                         <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                            Yapay zeka destekli çözümlerle geleceği bugünden inşa ediyoruz. Projelerinizi bir sonraki seviyeye taşıyın.
+                            {t('description')}
                         </p>
                         {/* Sosyal Medya İkonları */}
                         <div className="flex gap-4">
@@ -31,27 +36,27 @@ export default function Footer() {
                     {/* Hızlı Linkler */}
                     <div>
                         <h3 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">
-                            Hızlı Linkler
+                            {t('quickLinks.title')}
                         </h3>
                         <ul className="space-y-3">
                             <li>
                                 <Link href="#landing" className="text-slate-400 hover:text-indigo-400 transition-colors text-sm">
-                                    Ana Sayfa
+                                    {t('quickLinks.home')}
                                 </Link>
                             </li>
                             <li>
                                 <Link href="#pricing" className="text-slate-400 hover:text-indigo-400 transition-colors text-sm">
-                                    Fiyatlandırma
+                                    {t('quickLinks.pricing')}
                                 </Link>
                             </li>
                             <li>
                                 <Link href="#about" className="text-slate-400 hover:text-indigo-400 transition-colors text-sm">
-                                    Hakkımızda
+                                    {t('quickLinks.about')}
                                 </Link>
                             </li>
                             <li>
                                 <Link href="#docs" className="text-slate-400 hover:text-indigo-400 transition-colors text-sm">
-                                    Dökümantasyon
+                                    {t('quickLinks.docs')}
                                 </Link>
                             </li>
                         </ul>
@@ -60,27 +65,27 @@ export default function Footer() {
                     {/* Destek */}
                     <div>
                         <h3 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">
-                            Destek
+                            {t('support.title')}
                         </h3>
                         <ul className="space-y-3">
                             <li>
                                 <Link href="#contact" className="text-slate-400 hover:text-indigo-400 transition-colors text-sm">
-                                    İletişim
+                                    {t('support.contact')}
                                 </Link>
                             </li>
                             <li>
                                 <Link href="#faq" className="text-slate-400 hover:text-indigo-400 transition-colors text-sm">
-                                    SSS
+                                    {t('support.faq')}
                                 </Link>
                             </li>
                             <li>
                                 <Link href="#help" className="text-slate-400 hover:text-indigo-400 transition-colors text-sm">
-                                    Yardım Merkezi
+                                    {t('support.helpCenter')}
                                 </Link>
                             </li>
                             <li>
                                 <Link href="#api" className="text-slate-400 hover:text-indigo-400 transition-colors text-sm">
-                                    API Dokümantasyonu
+                                    {t('support.apiDocs')}
                                 </Link>
                             </li>
                         </ul>
@@ -89,19 +94,19 @@ export default function Footer() {
                     {/* Bülten */}
                     <div>
                         <h3 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">
-                            Bültenimize Katılın
+                            {t('newsletter.title')}
                         </h3>
                         <p className="text-slate-400 text-sm mb-4">
-                            Yeni özellikler ve güncellemelerden haberdar olun.
+                            {t('newsletter.description')}
                         </p>
                         <div className="space-y-3">
                             <input
                                 type="email"
-                                placeholder="E-posta adresiniz"
+                                placeholder={t('newsletter.emailPlaceholder')}
                                 className="w-full px-4 py-2.5 bg-slate-900/50 border border-indigo-900/40 rounded-lg text-slate-200 placeholder-slate-500 focus:outline-none focus:border-indigo-500/50 transition-colors text-sm"
                             />
                             <button className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-500 hover:to-purple-500 px-5 py-2.5 rounded-lg font-medium shadow-lg shadow-indigo-500/20 transition-all duration-300 text-sm">
-                                Abone Ol
+                                {t('newsletter.subscribe')}
                             </button>
                         </div>
                     </div>
@@ -111,17 +116,17 @@ export default function Footer() {
                 <div className="border-t border-indigo-900/30 py-6">
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                         <div className="text-slate-500 text-sm">
-                            © 2025 CraftingAI. Tüm hakları saklıdır.
+                            {t('copyright')}
                         </div>
                         <div className="flex gap-6">
                             <Link href="#privacy" className="text-slate-500 hover:text-indigo-400 transition-colors text-sm">
-                                Gizlilik Politikası
+                                {t('legal.privacy')}
                             </Link>
                             <Link href="#terms" className="text-slate-500 hover:text-indigo-400 transition-colors text-sm">
-                                Kullanım Şartları
+                                {t('legal.terms')}
                             </Link>
                             <Link href="#cookies" className="text-slate-500 hover:text-indigo-400 transition-colors text-sm">
-                                Çerez Politikası
+                                {t('legal.cookies')}
                             </Link>
                         </div>
                     </div>

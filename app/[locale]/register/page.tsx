@@ -1,4 +1,22 @@
-export default function Register() {
+import { getTranslations } from 'next-intl/server';
+import Link from 'next/link';
+import { locales } from '@/i18n';
+
+// Static params oluştur - her locale için
+export function generateStaticParams() {
+    return locales.map((locale) => ({
+        locale: locale
+    }));
+}
+
+export default async function Register({
+    params
+}: {
+    params: Promise<{ locale: string }>;
+}) {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'landing' });
+
     return (
         <main className="min-h-screen flex items-center justify-center bg-gradient-to-b from-slate-900 via-indigo-950 to-slate-900 relative overflow-hidden">
             {/* Animasyonlu Arka Plan Efektleri */}
@@ -25,8 +43,8 @@ export default function Register() {
 
                     {/* Başlık */}
                     <header className="mb-6 mt-8">
-                        <h1 className="text-3xl sm:text-4xl font-bold text-white mb-2">Hesap Oluşturun</h1>
-                        <p className="text-slate-400">CraftingAI ile yapay zeka dünyasına katılın</p>
+                        <h1 className="text-3xl sm:text-4xl font-bold text-white mb-2">{t('register.title')}</h1>
+                        <p className="text-slate-400">{t('register.subtitle')}</p>
                     </header>
 
                     {/* Sosyal Medya Kayıt Butonları */}
@@ -41,14 +59,14 @@ export default function Register() {
                                 <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05" />
                                 <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335" />
                             </svg>
-                            <span>Google ile Kayıt Ol</span>
+                            <span>{t('register.googleSignup')}</span>
                         </button>
                     </div>
 
                     {/* Ayırıcı */}
                     <div className="flex items-center text-slate-500 mb-6">
                         <hr className="flex-1 border-slate-700" />
-                        <span className="px-3 text-sm">veya</span>
+                        <span className="px-3 text-sm">{t('register.or')}</span>
                         <hr className="flex-1 border-slate-700" />
                     </div>
 
@@ -56,48 +74,48 @@ export default function Register() {
                     <form className="flex flex-col gap-4">
                         <div>
                             <label htmlFor="fullname" className="block text-sm font-medium text-slate-300 mb-2">
-                                Ad Soyad
+                                {t('register.name')}
                             </label>
                             <input
                                 id="fullname"
                                 type="text"
-                                placeholder="Adınız Soyadınız"
+                                placeholder={t('register.namePlaceholder')}
                                 required
                                 className="w-full px-4 py-3 rounded-xl bg-slate-900/50 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
                             />
                         </div>
                         <div>
                             <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">
-                                E-posta Adresi
+                                {t('register.email')}
                             </label>
                             <input
                                 id="email"
                                 type="email"
-                                placeholder="ornek@email.com"
+                                placeholder={t('register.emailPlaceholder')}
                                 required
                                 className="w-full px-4 py-3 rounded-xl bg-slate-900/50 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
                             />
                         </div>
                         <div>
                             <label htmlFor="password" className="block text-sm font-medium text-slate-300 mb-2">
-                                Şifre
+                                {t('register.password')}
                             </label>
                             <input
                                 id="password"
                                 type="password"
-                                placeholder="En az 8 karakter"
+                                placeholder={t('register.passwordPlaceholder')}
                                 required
                                 className="w-full px-4 py-3 rounded-xl bg-slate-900/50 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
                             />
                         </div>
                         <div>
                             <label htmlFor="confirmPassword" className="block text-sm font-medium text-slate-300 mb-2">
-                                Şifre Tekrar
+                                {t('register.confirmPassword')}
                             </label>
                             <input
                                 id="confirmPassword"
                                 type="password"
-                                placeholder="Şifrenizi tekrar girin"
+                                placeholder={t('register.confirmPasswordPlaceholder')}
                                 required
                                 className="w-full px-4 py-3 rounded-xl bg-slate-900/50 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
                             />
@@ -106,28 +124,28 @@ export default function Register() {
                             type="submit"
                             className="py-3 px-6 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 hover:from-indigo-500 hover:to-purple-500 transition-all duration-300"
                         >
-                            Kayıt Ol
+                            {t('register.registerButton')}
                         </button>
 
                         {/* Kullanım Şartları */}
                         <p className="text-xs text-slate-500 text-center mt-2">
-                            Kayıt olarak{' '}
-                            <a href="/terms" className="text-indigo-400 hover:text-indigo-300 transition">
-                                Kullanım Şartları
-                            </a>
-                            {' '}ve{' '}
-                            <a href="/privacy" className="text-indigo-400 hover:text-indigo-300 transition">
-                                Gizlilik Politikası
-                            </a>
-                            'nı kabul etmiş olursunuz.
+                            {t('register.termsText')}{' '}
+                            <Link href={`/${locale}/terms`} className="text-indigo-400 hover:text-indigo-300 transition">
+                                {t('register.termsLink')}
+                            </Link>
+                            {' '}{t('register.and')}{' '}
+                            <Link href={`/${locale}/privacy`} className="text-indigo-400 hover:text-indigo-300 transition">
+                                {t('register.privacyLink')}
+                            </Link>
+                            {t('register.termsEnd')}
                         </p>
 
                         {/* Giriş Linki */}
                         <div className="text-center text-sm mt-4">
-                            <span className="text-slate-400">Zaten hesabınız var mı? </span>
-                            <a href="/login" className="text-indigo-400 hover:text-indigo-300 font-medium transition">
-                                Giriş Yapın
-                            </a>
+                            <span className="text-slate-400">{t('register.haveAccount')} </span>
+                            <Link href={`/${locale}/login`} className="text-indigo-400 hover:text-indigo-300 font-medium transition">
+                                {t('register.signIn')}
+                            </Link>
                         </div>
                     </form>
 

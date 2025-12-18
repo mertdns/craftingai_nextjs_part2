@@ -21,11 +21,28 @@ Modern, responsive ve performans odaklı bir yapay zeka platformu landing sayfas
 - **SEO-Friendly**: Server-side rendering ile mükemmel SEO
 - **Fast Load**: Optimize edilmiş asset'ler ve lazy loading
 
+### 🌐 Çoklu Dil Desteği (i18n)
+- **next-intl Integration**: Profesyonel çoklu dil desteği
+- **Türkçe & İngilizce**: Tam çeviri desteği
+- **Locale Routing**: `/tr` ve `/en` route desteği
+- **Modern Language Switcher**: Glassmorphism efektli dil değiştirici
+- **Animated Dropdown**: Scale & fade animasyonlu dropdown menü
+- **SEO Optimized**: Her dil için ayrı meta tags
+
+### 🎭 Gelişmiş Animasyonlar
+- **Slide-Down Mobile Menu**: Yumuşak kayan mobil menü animasyonu
+- **Hamburger → X Transformation**: Animasyonlu menü ikonu
+- **Globe Icon Animation**: Hover'da dönen dünya ikonu
+- **Flag Hover Effects**: Hover'da büyüyen bayrak animasyonları
+- **Glow Border Effects**: Hover'da parlayan kenar efektleri
+- **Loading Spinner**: Dil değişimi sırasında spinner
+
 ### 🧭 Navigasyon
 - **Scroll Spy**: Otomatik section algılama ve aktif link gösterimi
 - **Smooth Scrolling**: Yumuşak sayfa içi navigasyon
-- **Mobile Menu**: Responsive mobil menü
+- **Animated Mobile Menu**: Slide-down animasyonlu mobil menü
 - **Fixed Header**: Sabit header ile kolay erişim
+- **Locale-Aware Links**: Dil-aware navigasyon linkleri
 
 ### 🛠️ State Management
 - **Redux Toolkit**: Modern state yönetimi
@@ -37,18 +54,31 @@ Modern, responsive ve performans odaklı bir yapay zeka platformu landing sayfas
 ```
 craftingai_nextjs_p2/
 ├── app/
+│   ├── [locale]/                 # Locale-based routing
+│   │   ├── landing/              # Landing page route
+│   │   ├── login/                # Login page route
+│   │   ├── register/             # Register page route
+│   │   ├── layout.tsx            # Locale layout
+│   │   └── page.tsx              # Locale redirect
 │   ├── components/
-│   │   └── Landing_Layout/
-│   │       ├── Header/          # Navigation header
-│   │       └── Footer/          # Footer component
-│   ├── landing/
-│   │   ├── layout.tsx           # Landing layout
-│   │   └── page.tsx             # Landing page (Server Component)
+│   │   ├── Landing_Layout/
+│   │   │   ├── Header/           # Navigation header (index.tsx)
+│   │   │   └── Footer/           # Footer component (index.tsx)
+│   │   └── LanguageSwitcher/     # Language switcher (index.tsx)
 │   ├── store/
-│   │   └── store.ts             # Redux store configuration
-│   ├── globals.css              # Global styles & animations
-│   └── layout.tsx               # Root layout
-├── public/                       # Static assets
+│   │   └── store.ts              # Redux store configuration
+│   ├── globals.css               # Global styles & animations
+│   └── layout.tsx                # Root layout
+├── locales/                       # i18n translations
+│   ├── tr/                        # Turkish translations
+│   │   ├── common.json
+│   │   └── landing.json
+│   └── en/                        # English translations
+│       ├── common.json
+│       └── landing.json
+├── i18n.ts                        # i18n configuration
+├── middleware.ts                  # Locale middleware
+├── public/                        # Static assets
 └── package.json
 ```
 
@@ -82,7 +112,9 @@ npm run dev
 
 4. **Tarayıcınızda açın**
 ```
-http://localhost:3000/landing
+http://localhost:3000/tr/landing
+# veya
+http://localhost:3000/en/landing
 ```
 
 ## 📦 Teknolojiler
@@ -100,6 +132,11 @@ http://localhost:3000/landing
 ### State Management
 - **Redux Toolkit 2.10.1** - State management
 - **React Redux 9.2.0** - React bindings
+
+### Internationalization
+- **next-intl 3.27.2** - i18n for Next.js App Router
+- **Locale Routing** - Automatic locale detection and routing
+- **Server & Client Components** - Full i18n support
 
 ### Development
 - **ESLint 9** - Code linting

@@ -1,0 +1,184 @@
+{
+    "hero": {
+        "badge": "AI-Powered Solutions",
+        "title": {
+            "line1": "Build the Future",
+            "line2": "Starting Today"
+        },
+        "subtitle": "Take your projects to the next level with AI-powered solutions from CraftingAI. Create the application of your dreams with fast, reliable, and easy-to-use AI tools.",
+        "stats": {
+            "users": {
+                "value": "10K+",
+                "label": "Active Users"
+            },
+            "apiCalls": {
+                "value": "50K+",
+                "label": "API Calls"
+            },
+            "uptime": {
+                "value": "99.9%",
+                "label": "Uptime"
+            },
+            "support": {
+                "value": "24/7",
+                "label": "Support"
+            }
+        }
+    },
+    "features": {
+        "title": "Get AI Power",
+        "titleHighlight": "At Your Fingertips",
+        "titleEnd": "",
+        "subtitle": "Develop your projects quickly with CraftingAI, save time, and take user experience to the next level.",
+        "items": {
+            "integration": {
+                "title": "Quick Integration",
+                "description": "Integrate into your project in minutes. Say goodbye to complex configurations."
+            },
+            "security": {
+                "title": "Secure & Reliable",
+                "description": "Your data is encrypted end-to-end. We're always with you with 99.9% uptime guarantee."
+            },
+            "customization": {
+                "title": "Easy Customization",
+                "description": "Adapt to your needs. Full control is yours with flexible API structure."
+            },
+            "analytics": {
+                "title": "Real-Time Analytics",
+                "description": "Track performance instantly. Optimize your decisions with detailed statistics."
+            }
+        }
+    },
+    "pricing": {
+        "title": "Choose the",
+        "titleHighlight": "Right Plan",
+        "titleEnd": "For You",
+        "subtitle": "Integrate AI power into your projects with CraftingAI. Flexible pricing options for every budget.",
+        "plans": {
+            "starter": {
+                "name": "Starter",
+                "description": "Ideal for small projects",
+                "price": "$9",
+                "period": "/month",
+                "features": {
+                    "apiCalls": "1,000 API calls/month",
+                    "models": "Basic AI models",
+                    "support": "Email support",
+                    "docs": "API documentation"
+                }
+            },
+            "pro": {
+                "name": "Pro",
+                "badge": "Most Popular",
+                "description": "For growing businesses",
+                "price": "$29",
+                "period": "/month",
+                "features": {
+                    "apiCalls": "10,000 API calls/month",
+                    "models": "Advanced AI models",
+                    "support": "Priority support (24/7)",
+                    "integration": "Custom integration support",
+                    "analytics": "Detailed analytics"
+                }
+            },
+            "enterprise": {
+                "name": "Enterprise",
+                "description": "Enterprise solutions",
+                "price": "Custom",
+                "priceNote": "Based on your needs",
+                "features": {
+                    "apiCalls": "Unlimited API calls",
+                    "models": "All AI models",
+                    "training": "Custom model training",
+                    "sla": "Custom SLA guarantee",
+                    "manager": "Technical account manager"
+                }
+            }
+        }
+    },
+    "about": {
+        "title": "Who",
+        "titleHighlight": "We Are?",
+        "subtitle": "We create innovative digital experiences that elevate your brand and inspire your audience.",
+        "description": "Our passionate team brings together creativity and cutting-edge tools to bring your vision to life. We aim for excellence in every project.",
+        "features": {
+            "team": {
+                "title": "Expert Team",
+                "description": "A passionate group of experts committed to delivering excellence in every project."
+            },
+            "innovation": {
+                "title": "Innovative Approach",
+                "description": "We embrace creativity and technology to create unique solutions tailored for you."
+            },
+            "customer": {
+                "title": "Customer Centric",
+                "description": "Your satisfaction is our priority — we listen, adapt, and deliver beyond expectations."
+            }
+        }
+    },
+    "contact": {
+        "title": "Get In",
+        "titleHighlight": "Touch",
+        "subtitle": "Have questions? Looking for custom solutions for your projects? We're here to help.",
+        "form": {
+            "name": "Your Name",
+            "namePlaceholder": "Enter your name",
+            "email": "Email Address",
+            "emailPlaceholder": "example@email.com",
+            "subject": "Subject",
+            "subjectPlaceholder": "Subject of your message",
+            "message": "Your Message",
+            "messagePlaceholder": "Write your message here..."
+        },
+        "info": {
+            "email": {
+                "title": "Email",
+                "value": "info@craftingai.com"
+            },
+            "phone": {
+                "title": "Phone",
+                "value": "+90 (555) 123 45 67"
+            },
+            "address": {
+                "title": "Address",
+                "value": "Istanbul, Turkey"
+            }
+        }
+    },
+    "login": {
+        "title": "Welcome Back",
+        "subtitle": "Sign in to your CraftingAI account",
+        "googleLogin": "Sign in with Google",
+        "or": "or",
+        "email": "Email Address",
+        "emailPlaceholder": "example@email.com",
+        "password": "Password",
+        "rememberMe": "Remember Me",
+        "forgotPassword": "Forgot Password",
+        "loginButton": "Sign In",
+        "noAccount": "Don't have an account?",
+        "signUp": "Create Account"
+    },
+    "register": {
+        "title": "Create Account",
+        "subtitle": "Join the world of AI with CraftingAI",
+        "googleSignup": "Sign up with Google",
+        "or": "or",
+        "name": "Full Name",
+        "namePlaceholder": "Your Full Name",
+        "email": "Email Address",
+        "emailPlaceholder": "example@email.com",
+        "password": "Password",
+        "passwordPlaceholder": "At least 8 characters",
+        "confirmPassword": "Confirm Password",
+        "confirmPasswordPlaceholder": "Re-enter your password",
+        "registerButton": "Sign Up",
+        "termsText": "By signing up, you agree to our",
+        "termsLink": "Terms of Service",
+        "and": "and",
+        "privacyLink": "Privacy Policy",
+        "termsEnd": ".",
+        "haveAccount": "Already have an account?",
+        "signIn": "Sign In"
+    }
+}
