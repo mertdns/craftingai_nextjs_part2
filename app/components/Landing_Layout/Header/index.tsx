@@ -32,7 +32,7 @@ export default function Header() {
     // Scroll Spy - Scroll pozisyonuna göre active link günceller
     useEffect(() => {
         const isLandingPage = pathname.includes('/landing');
-        if (isLandingPage) setActiveLink(t('home'));
+        if (isLandingPage) setActiveLink(t('home'))
 
         const sections = [
             { id: "header", name: t('home') },
