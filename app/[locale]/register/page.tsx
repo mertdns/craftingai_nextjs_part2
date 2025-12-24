@@ -55,24 +55,24 @@ export default async function Register({
                     </div>
 
                     {/* Welcome Text */}
-                    <h2 className="text-3xl font-bold text-white mb-4 text-center">Aramıza Katılın!</h2>
+                    <h2 className="text-3xl font-bold text-white mb-4 text-center">{t('register.sidebar.title')}</h2>
                     <p className="text-purple-200/80 text-center max-w-xs leading-relaxed">
-                        Binlerce kullanıcıyla birlikte yapay zeka gücünü keşfedin
+                        {t('register.sidebar.description')}
                     </p>
 
                     {/* Stats */}
                     <div className="flex gap-8 mt-10">
                         <div className="text-center">
-                            <div className="text-3xl font-bold text-white">10K+</div>
-                            <div className="text-purple-300/70 text-sm">Kullanıcı</div>
+                            <div className="text-3xl font-bold text-white">{t('register.sidebar.stat1Value')}</div>
+                            <div className="text-purple-300/70 text-sm">{t('register.sidebar.stat1Label')}</div>
                         </div>
                         <div className="text-center">
-                            <div className="text-3xl font-bold text-white">50+</div>
-                            <div className="text-purple-300/70 text-sm">AI Araç</div>
+                            <div className="text-3xl font-bold text-white">{t('register.sidebar.stat2Value')}</div>
+                            <div className="text-purple-300/70 text-sm">{t('register.sidebar.stat2Label')}</div>
                         </div>
                         <div className="text-center">
-                            <div className="text-3xl font-bold text-white">99%</div>
-                            <div className="text-purple-300/70 text-sm">Memnuniyet</div>
+                            <div className="text-3xl font-bold text-white">{t('register.sidebar.stat3Value')}</div>
+                            <div className="text-purple-300/70 text-sm">{t('register.sidebar.stat3Label')}</div>
                         </div>
                     </div>
                 </div>

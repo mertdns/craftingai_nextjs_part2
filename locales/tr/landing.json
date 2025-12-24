@@ -157,7 +157,14 @@
         "forgotPassword": "Şifremi Unuttum",
         "loginButton": "Giriş Yap",
         "noAccount": "Hesabınız yok mu?",
-        "signUp": "Hesap Oluştur"
+        "signUp": "Hesap Oluştur",
+        "sidebar": {
+            "brandName": "CraftingAI",
+            "tagline": "Yapay zeka destekli araçlarla yaratıcılığınızı keşfedin",
+            "feature1": "✨ Yapay Zeka Destekli",
+            "feature2": "🚀 Hızlı & Güvenli",
+            "feature3": "🎨 Yaratıcı Araçlar"
+        }
     },
     "register": {
         "title": "Hesap Oluşturun",
@@ -179,6 +186,16 @@
         "privacyLink": "Gizlilik Politikası",
         "termsEnd": "'nı kabul etmiş olursunuz.",
         "haveAccount": "Zaten hesabınız var mı?",
-        "signIn": "Giriş Yapın"
+        "signIn": "Giriş Yapın",
+        "sidebar": {
+            "title": "Aramıza Katılın!",
+            "description": "Binlerce kullanıcıyla birlikte yapay zeka gücünü keşfedin",
+            "stat1Value": "10K+",
+            "stat1Label": "Kullanıcı",
+            "stat2Value": "50+",
+            "stat2Label": "AI Araç",
+            "stat3Value": "99%",
+            "stat3Label": "Memnuniyet"
+        }
     }
 }

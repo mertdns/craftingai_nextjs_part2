@@ -58,21 +58,21 @@ export default async function Login({
                     </div>
 
                     {/* Welcome Text */}
-                    <h2 className="text-3xl font-bold text-white mb-4 text-center">CraftingAI</h2>
+                    <h2 className="text-3xl font-bold text-white mb-4 text-center">{t('login.sidebar.brandName')}</h2>
                     <p className="text-indigo-200/80 text-center max-w-xs leading-relaxed">
-                        Yapay zeka destekli araçlarla yaratıcılığınızı keşfedin
+                        {t('login.sidebar.tagline')}
                     </p>
 
                     {/* Feature Pills */}
                     <div className="flex flex-wrap gap-3 mt-8 justify-center">
                         <span className="px-4 py-2 rounded-full bg-indigo-500/20 border border-indigo-500/30 text-indigo-200 text-sm backdrop-blur-sm">
-                            ✨ AI Powered
+                            {t('login.sidebar.feature1')}
                         </span>
                         <span className="px-4 py-2 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-200 text-sm backdrop-blur-sm">
-                            🚀 Fast & Secure
+                            {t('login.sidebar.feature2')}
                         </span>
                         <span className="px-4 py-2 rounded-full bg-pink-500/20 border border-pink-500/30 text-pink-200 text-sm backdrop-blur-sm">
-                            🎨 Creative Tools
+                            {t('login.sidebar.feature3')}
                         </span>
                     </div>
                 </div>
@@ -164,7 +164,7 @@ export default async function Login({
                         <div className="flex items-center justify-between text-sm">
                             <label className="flex items-center gap-2 cursor-pointer">
                                 <input type="checkbox" className="w-4 h-4 rounded border-slate-600 bg-slate-800 text-indigo-500 focus:ring-indigo-500/50" />
-                                <span className="text-slate-400">Beni hatırla</span>
+                                <span className="text-slate-400">{t('login.rememberMe')}</span>
                             </label>
                             <a href="#" className="text-indigo-400 hover:text-indigo-300 transition">
                                 {t('login.forgotPassword')}
@@ -182,7 +182,7 @@ export default async function Login({
 
                     {/* Sign Up Link */}
                     <p className="text-center mt-8 text-slate-400">
-                        Hesabınız yok mu?{' '}
+                        {t('login.noAccount')}{' '}
                         <Link href={`/${locale}/register`} className="text-indigo-400 hover:text-indigo-300 font-medium transition">
                             {t('login.signUp')}
                         </Link>

@@ -157,7 +157,14 @@
         "forgotPassword": "Forgot Password",
         "loginButton": "Sign In",
         "noAccount": "Don't have an account?",
-        "signUp": "Create Account"
+        "signUp": "Create Account",
+        "sidebar": {
+            "brandName": "CraftingAI",
+            "tagline": "Discover your creativity with AI-powered tools",
+            "feature1": "✨ AI Powered",
+            "feature2": "🚀 Fast & Secure",
+            "feature3": "🎨 Creative Tools"
+        }
     },
     "register": {
         "title": "Create Account",
@@ -179,6 +186,16 @@
         "privacyLink": "Privacy Policy",
         "termsEnd": ".",
         "haveAccount": "Already have an account?",
-        "signIn": "Sign In"
+        "signIn": "Sign In",
+        "sidebar": {
+            "title": "Join Us!",
+            "description": "Discover the power of AI with thousands of users",
+            "stat1Value": "10K+",
+            "stat1Label": "Users",
+            "stat2Value": "50+",
+            "stat2Label": "AI Tools",
+            "stat3Value": "99%",
+            "stat3Label": "Satisfaction"
+        }
     }
 }
