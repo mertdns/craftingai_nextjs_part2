@@ -33,7 +33,7 @@ export default async function LocaleLayout({
     const messages = await getMessages();
 
     return (
-        <html lang={locale} className="h-full scroll-smooth">
+        <html lang={locale} className="h-full scroll-smooth" suppressHydrationWarning>
             <head>
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
             </head>

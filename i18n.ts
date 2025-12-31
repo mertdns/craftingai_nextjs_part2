@@ -19,9 +19,11 @@ export default getRequestConfig(async ({ requestLocale }) => {
     return {
         locale,
         messages: {
-            // Her locale için common ve landing JSON dosyalarını yükle
+            // Her locale için JSON dosyalarını yükle
             ...(await import(`./locales/${locale}/common.json`)).default,
-            landing: (await import(`./locales/${locale}/landing.json`)).default
+            landing: (await import(`./locales/${locale}/landing.json`)).default,
+            presentations: (await import(`./locales/${locale}/presentations/presentations.json`)).default,
+            dashboard: (await import(`./locales/${locale}/dashboard.json`)).default
         }
     };
 });

@@ -1,0 +1,89 @@
+{
+    "title": "Sunumlarım",
+    "subtitle": "AI ile oluşturduğun sunumları buradan yönetebilirsin",
+    "newPresentation": "Yeni Sunum",
+    "search": "Sunum ara...",
+    "filters": {
+        "all": "Tümü",
+        "recent": "Son Düzenlenen",
+        "favorites": "Favoriler"
+    },
+    "empty": {
+        "title": "Henüz sunum yok",
+        "description": "İlk sunumunu oluşturarak başla"
+    },
+    "card": {
+        "slides": "slayt",
+        "edited": "düzenlendi",
+        "view": "Görüntüle",
+        "edit": "Düzenle",
+        "delete": "Sil"
+    },
+    "create": {
+        "title": "Yeni Sunum Oluştur",
+        "subtitle": "AI ile profesyonel sunumlar oluştur",
+        "selectTemplate": "Şablon Seç",
+        "promptLabel": "Sunum Konusu",
+        "promptPlaceholder": "Sunumunuzun konusunu ve içeriğini açıklayın...",
+        "generateButton": "Sunum Oluştur",
+        "generating": "Oluşturuluyor...",
+        "characterCount": "karakter",
+        "examplesTitle": "Örnek Promptlar",
+        "examples": [
+            "Yapay zeka teknolojilerinin iş dünyasına etkisi hakkında 10 slaytlık bir sunum",
+            "Yeni ürün lansmanı için yatırımcı sunum unu hazırla",
+            "E-ticaret trendleri 2025 hakkında eğitici bir sunum"
+        ]
+    },
+    "templates": {
+        "business": {
+            "name": "İş Sunumu",
+            "description": "Profesyonel kurumsal tasarım"
+        },
+        "education": {
+            "name": "Eğitim",
+            "description": "Öğretici ve adım adım"
+        },
+        "pitch": {
+            "name": "Pitch Deck",
+            "description": "Yatırımcı odaklı sunum"
+        },
+        "minimal": {
+            "name": "Minimalist",
+            "description": "Sade ve temiz tasarım"
+        }
+    },
+    "view": {
+        "backToList": "Sunumlara Dön",
+        "slide": "Slayt",
+        "of": "/",
+        "previous": "Önceki",
+        "next": "Sonraki",
+        "fullscreen": "Tam Ekran",
+        "exitFullscreen": "Tam Ekrandan Çık",
+        "download": "İndir",
+        "share": "Paylaş",
+        "edit": "Düzenle",
+        "swipeHint": "Kaydırarak gezin"
+    },
+    "edit": {
+        "title": "Sunumu Düzenle",
+        "slides": "Slaytlar",
+        "addSlide": "Slayt Ekle",
+        "deleteSlide": "Slaytı Sil",
+        "duplicateSlide": "Slaytı Kopyala",
+        "slideTitle": "Slayt Başlığı",
+        "slideContent": "Slayt İçeriği",
+        "background": "Arka Plan",
+        "save": "Kaydet",
+        "saving": "Kaydediliyor...",
+        "saved": "Kaydedildi",
+        "preview": "Önizleme",
+        "undo": "Geri Al",
+        "redo": "İleri Al",
+        "autoSaved": "Otomatik kaydedildi",
+        "unsavedChanges": "Kaydedilmemiş değişiklikler",
+        "confirmDelete": "Bu slaytı silmek istediğinize emin misiniz?",
+        "dragHint": "Sürükleyerek sıralayın"
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "greeting": "Hoş geldin",
+    "progressMessage": "Bu ay projelerinde harika ilerleme kaydediyorsun.",
+    "stats": {
+        "totalApiCalls": "Toplam API Çağrısı",
+        "activeProjects": "Aktif Projeler",
+        "avgResponseTime": "Ortalama Yanıt Süresi",
+        "successRate": "Başarı Oranı"
+    },
+    "recentProjects": {
+        "title": "Son Projeler",
+        "active": "Aktif",
+        "paused": "Duraklatıldı",
+        "ago": "önce"
+    },
+    "quickActions": {
+        "title": "Hızlı İşlemler",
+        "newProject": "Yeni Proje Oluştur",
+        "createApiKey": "API Anahtarı Oluştur",
+        "viewReports": "Raporları Görüntüle"
+    }
+}

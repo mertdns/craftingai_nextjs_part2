@@ -1,0 +1,89 @@
+{
+    "title": "My Presentations",
+    "subtitle": "Manage your AI-generated presentations here",
+    "newPresentation": "New Presentation",
+    "search": "Search presentations...",
+    "filters": {
+        "all": "All",
+        "recent": "Recently Edited",
+        "favorites": "Favorites"
+    },
+    "empty": {
+        "title": "No presentations yet",
+        "description": "Start by creating your first presentation"
+    },
+    "card": {
+        "slides": "slides",
+        "edited": "edited",
+        "view": "View",
+        "edit": "Edit",
+        "delete": "Delete"
+    },
+    "create": {
+        "title": "Create New Presentation",
+        "subtitle": "Create professional presentations with AI",
+        "selectTemplate": "Select Template",
+        "promptLabel": "Presentation Topic",
+        "promptPlaceholder": "Describe the topic and content of your presentation...",
+        "generateButton": "Generate Presentation",
+        "generating": "Generating...",
+        "characterCount": "characters",
+        "examplesTitle": "Example Prompts",
+        "examples": [
+            "A 10-slide presentation about the impact of AI on business",
+            "Prepare an investor pitch deck for a new product launch",
+            "An educational presentation about e-commerce trends 2025"
+        ]
+    },
+    "templates": {
+        "business": {
+            "name": "Business",
+            "description": "Professional corporate design"
+        },
+        "education": {
+            "name": "Education",
+            "description": "Instructional step-by-step"
+        },
+        "pitch": {
+            "name": "Pitch Deck",
+            "description": "Investor-focused presentation"
+        },
+        "minimal": {
+            "name": "Minimalist",
+            "description": "Clean and simple design"
+        }
+    },
+    "view": {
+        "backToList": "Back to Presentations",
+        "slide": "Slide",
+        "of": "/",
+        "previous": "Previous",
+        "next": "Next",
+        "fullscreen": "Fullscreen",
+        "exitFullscreen": "Exit Fullscreen",
+        "download": "Download",
+        "share": "Share",
+        "edit": "Edit",
+        "swipeHint": "Swipe to navigate"
+    },
+    "edit": {
+        "title": "Edit Presentation",
+        "slides": "Slides",
+        "addSlide": "Add Slide",
+        "deleteSlide": "Delete Slide",
+        "duplicateSlide": "Duplicate Slide",
+        "slideTitle": "Slide Title",
+        "slideContent": "Slide Content",
+        "background": "Background",
+        "save": "Save",
+        "saving": "Saving...",
+        "saved": "Saved",
+        "preview": "Preview",
+        "undo": "Undo",
+        "redo": "Redo",
+        "autoSaved": "Auto-saved",
+        "unsavedChanges": "Unsaved changes",
+        "confirmDelete": "Are you sure you want to delete this slide?",
+        "dragHint": "Drag to reorder"
+    }
+}

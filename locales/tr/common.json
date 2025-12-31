@@ -48,5 +48,34 @@
         "sendMessage": "Mesaj Gönder",
         "start": "Başla",
         "contactUs": "İletişime Geç"
+    },
+    "sidebar": {
+        "brand": "CraftingAI",
+        "menu": {
+            "dashboard": "Dashboard",
+            "presentations": "Sunumlar",
+            "projects": "Projeler",
+            "apiManagement": "API Yönetimi",
+            "analytics": "Analitik",
+            "models": "AI Modeller",
+            "settings": "Ayarlar",
+            "documentation": "Dökümantasyon",
+            "support": "Destek"
+        },
+        "sections": {
+            "main": "Ana Menü",
+            "tools": "Araçlar",
+            "account": "Hesap"
+        },
+        "user": {
+            "profile": "Profil",
+            "logout": "Çıkış Yap",
+            "plan": "Pro Plan",
+            "usage": "Kullanım"
+        },
+        "collapse": "Daralt",
+        "expand": "Genişlet",
+        "apiCalls": "API Çağrıları",
+        "thisMonth": "Bu Ay"
     }
 }

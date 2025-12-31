@@ -1,0 +1,22 @@
+{
+    "greeting": "Welcome",
+    "progressMessage": "You're making great progress on your projects this month.",
+    "stats": {
+        "totalApiCalls": "Total API Calls",
+        "activeProjects": "Active Projects",
+        "avgResponseTime": "Avg Response Time",
+        "successRate": "Success Rate"
+    },
+    "recentProjects": {
+        "title": "Recent Projects",
+        "active": "Active",
+        "paused": "Paused",
+        "ago": "ago"
+    },
+    "quickActions": {
+        "title": "Quick Actions",
+        "newProject": "Create New Project",
+        "createApiKey": "Create API Key",
+        "viewReports": "View Reports"
+    }
+}

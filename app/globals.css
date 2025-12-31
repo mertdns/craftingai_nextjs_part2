@@ -1,19 +1,117 @@
 @import "tailwindcss";
 
-/* Gradient Animasyonu */
-@keyframes gradient {
+@layer base {
 
-    0%,
-    100% {
-        background-position: 0% 50%;
+    /* Custom Scrollbar Stilleri */
+    ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
     }
 
-    50% {
-        background-position: 100% 50%;
+    ::-webkit-scrollbar-track {
+        background: rgb(15 23 42);
+        border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, rgb(99 102 241), rgb(139 92 246));
+        border-radius: 4px;
+        border: 2px solid rgb(15 23 42);
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(180deg, rgb(129 140 248), rgb(167 139 250));
+    }
+
+    /* Firefox için scrollbar */
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: rgb(99 102 241) rgb(15 23 42);
+    }
+
+    /* Sidebar özel scrollbar */
+    .sidebar-scroll::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .sidebar-scroll::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .sidebar-scroll::-webkit-scrollbar-thumb {
+        background: rgba(99, 102, 241, 0.4);
+        border-radius: 3px;
+    }
+
+    .sidebar-scroll::-webkit-scrollbar-thumb:hover {
+        background: rgba(99, 102, 241, 0.7);
     }
 }
 
-.animate-gradient {
-    background-size: 200% 200%;
-    animation: gradient 3s ease infinite;
+@layer utilities {
+
+    /* Gradient Animasyonu */
+    @keyframes gradient {
+
+        0%,
+        100% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+    }
+
+    .animate-gradient {
+        background-size: 200% 200%;
+        animation: gradient 3s ease infinite;
+    }
+
+    /* Sidebar Slide-in Animasyonu - Daha belirgin */
+    @keyframes slideInLeft {
+        0% {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideOutLeft {
+        0% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        100% {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .animate-slide-in {
+        animation: slideInLeft 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .animate-slide-out {
+        animation: slideOutLeft 0.25s cubic-bezier(0.4, 0, 1, 1) forwards;
+    }
+
+    .animate-fade-in {
+        animation: fadeIn 0.25s ease-out forwards;
+    }
 }

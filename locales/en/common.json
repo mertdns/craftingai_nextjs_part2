@@ -48,5 +48,34 @@
         "sendMessage": "Send Message",
         "start": "Start",
         "contactUs": "Contact Us"
+    },
+    "sidebar": {
+        "brand": "CraftingAI",
+        "menu": {
+            "dashboard": "Dashboard",
+            "presentations": "Presentations",
+            "projects": "Projects",
+            "apiManagement": "API Management",
+            "analytics": "Analytics",
+            "models": "AI Models",
+            "settings": "Settings",
+            "documentation": "Documentation",
+            "support": "Support"
+        },
+        "sections": {
+            "main": "Main Menu",
+            "tools": "Tools",
+            "account": "Account"
+        },
+        "user": {
+            "profile": "Profile",
+            "logout": "Logout",
+            "plan": "Pro Plan",
+            "usage": "Usage"
+        },
+        "collapse": "Collapse",
+        "expand": "Expand",
+        "apiCalls": "API Calls",
+        "thisMonth": "This Month"
     }
 }
